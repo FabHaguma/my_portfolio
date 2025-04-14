@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- Contact Form Handling (Placeholder) ---
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent the default form submission
+    // const contactForm = document.getElementById('contact-form');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', (event) => {
+    //         event.preventDefault(); // Prevent the default form submission
 
             // --- IMPORTANT ---
             // This is where you would typically send the form data.
@@ -66,21 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // or a service like Formspree.
             // -----------------
 
-            const formData = new FormData(contactForm);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
+            // const formData = new FormData(contactForm);
+            // const name = formData.get('name');
+            // const email = formData.get('email');
+            // const message = formData.get('message');
 
-            console.log('Form Submitted (Not Sent):');
-            console.log('Name:', name);
-            console.log('Email:', email);
-            console.log('Message:', message);
+            // console.log('Form Submitted (Not Sent):');
+            // console.log('Name:', name);
+            // console.log('Email:', email);
+            // console.log('Message:', message);
 
-            alert('Thank you for your message, ' + name + '! (Note: This form is currently a demo and did not send an email.)');
+            // alert('Thank you for your message, ' + name + '! (Note: This form is currently a demo and did not send an email.)');
 
             // Optional: Clear the form fields after "submission"
             // contactForm.reset();
-        });
-    }
+        // });
+    // }
 
 });
