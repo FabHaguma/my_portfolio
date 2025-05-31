@@ -1,34 +1,62 @@
 // src/App.jsx
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import './App.css'; // Or your global stylesheet
+import React, { useLayoutEffect } from 'react'; // Import useLayoutEffect
+import { Routes, Route, useLocation } from 'react-router-dom'; // Import useLocation
+import './App.css';
 
-import Header from './components/Header'; // Will need modification for navigation links
-import About from './components/About';
+import Header from './components/layout/Header';
+import About from './components/navigation/About';
 import ProjectsSummary from './components/ProjectsSummary';
-import Technologies from './components/Technologies';
-import Resume from './components/Resume';
+import Technologies from './components/navigation/Technologies';
+import Resume from './components/navigation/Resume';
 import BlogSummary from './components/BlogSummary';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Contact from './components/navigation/Contact';
+import Footer from './components/layout/Footer';
 import ProjectsPage from './pages/ProjectsPage';
 
 // Component for the main content of the single-page scroll
-const HomePageLayout = () => (
-  <>
-    <About />
-    <ProjectsSummary />
-    <Technologies />
-    <Resume />
-    <BlogSummary />
-    <Contact />
-  </>
-);
+const HomePageLayout = () => {
+  const location = useLocation(); // Get location object
+
+  // useLayoutEffect is preferred for DOM manipulations that need to happen before paint
+  useLayoutEffect(() => {
+    if (location.state && location.state.scrollToSection) {
+      const sectionId = location.state.scrollToSection;
+      if (sectionId === 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const sectionElement = document.getElementById(sectionId);
+        if (sectionElement) {
+          sectionElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      // Optional: Clear the state after scrolling so it doesn't re-trigger on refresh
+      // This might require using history.replaceState or navigating again without state.
+      // For now, this should work for typical navigation.
+      // If you want to clear it:
+      // window.history.replaceState({}, document.title)
+    } else if (!location.hash) { // If no hash and no state, scroll to top on initial load of home
+      window.scrollTo(0, 0);
+    }
+  }, [location.state, location.hash]); // Re-run effect if location.state changes
+
+  return (
+    <>
+      {/* Add an invisible element at the top for the 'top' scroll target if needed */}
+      <div id="top" style={{ position: 'absolute', top: 0 }}></div>
+      <About />
+      <ProjectsSummary />
+      <Technologies />
+      <Resume />
+      {/* <BlogSummary /> */}
+      <Contact />
+    </>
+  );
+};
 
 function App() {
   return (
     <>
-      <Header /> {/* We'll add <Link> components to Header later */}
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<HomePageLayout />} />

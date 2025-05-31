@@ -1,0 +1,78 @@
+/* src/components/ProjectsSummary.css */
+.projects-summary-section {
+  /* Uses .page-section for general padding and max-width from App.css */
+}
+
+.projects-summary-section h2 {
+  /* Uses .page-section h2 styling */
+  margin-bottom: 2rem;
+}
+
+.projects-summary-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-columns: 1fr; /* Mobile first: 1 column */
+  gap: 2rem;
+  margin-bottom: 2.5rem; /* Space before the "View All" button */
+}
+
+/* For tablets and up */
+@media (min-width: 600px) {
+  .projects-summary-grid {
+    /* Can be 2 or 3 columns depending on how many you feature */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* If always showing 2 or 3, you can be more specific:
+       grid-template-columns: repeat(2, 1fr); for 2 featured
+       grid-template-columns: repeat(3, 1fr); for 3 featured (if screen is wide enough)
+    */
+  }
+}
+@media (min-width: 992px) {
+    /* Example for 3 featured projects on larger screens */
+    .projects-summary-grid {
+         grid-template-columns: repeat(3, 1fr);
+    }
+    /* If you feature only 2, then 'repeat(2, 1fr)' might be better on large screens too */
+}
+
+
+.no-projects-summary-message {
+  text-align: center;
+  font-style: italic;
+  color: var(--secondary-color-light);
+  margin-bottom: 2.5rem;
+}
+body.dark-theme .no-projects-summary-message {
+  color: var(--secondary-color-dark);
+}
+
+.view-all-projects-container {
+  text-align: center;
+  margin-top: 1rem; /* Add some space if there were projects */
+}
+
+/* Generic button style (can be moved to a global CSS file if used elsewhere) */
+.button-primary {
+  display: inline-block;
+  background-color: var(--primary-color-light);
+  color: #ffffff; /* Text on primary button */
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+body.dark-theme .button-primary {
+  background-color: var(--primary-color-dark);
+  color: var(--background-color-dark); /* Text on primary button for dark theme */
+}
+
+.button-primary:hover {
+  background-color: var(--link-hover-light);
+  transform: translateY(-2px);
+}
+body.dark-theme .button-primary:hover {
+  background-color: var(--link-hover-dark);
+}

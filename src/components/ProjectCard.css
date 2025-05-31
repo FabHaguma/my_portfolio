@@ -1,0 +1,160 @@
+/* src/components/ProjectCard.css */
+.project-card {
+  background-color: var(--card-bg-light);
+  border: 1px solid var(--card-border-light);
+  border-radius: 8px;
+  overflow: hidden; /* To ensure border-radius applies to image container too */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+              background-color 0.3s ease, border-color 0.3s ease;
+}
+body.dark-theme .project-card {
+  background-color: var(--card-bg-dark);
+  border-color: var(--card-border-dark);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+body.dark-theme .project-card:hover {
+   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.08);
+}
+
+
+.project-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Adjust aspect ratio as needed e.g., 16/9, 4/3 */
+  overflow: hidden;
+  background-color: #e0e0e0; /* Placeholder bg for image */
+}
+body.dark-theme .project-image-container {
+    background-color: #424242;
+}
+
+
+.project-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover ensures the image fills the container, might crop */
+  /* object-fit: contain; /* Contain ensures full image is visible, might leave empty space */
+  display: block;
+  transition: transform 0.3s ease;
+}
+.project-card:hover .project-screenshot {
+  transform: scale(1.03); /* Subtle zoom on hover */
+}
+
+.project-info {
+  padding: 1rem 1.25rem;
+  flex-grow: 1; /* Allows this section to take remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-name {
+  font-size: 1.3rem;
+  color: var(--primary-color-light);
+  margin-bottom: 0.5rem;
+}
+body.dark-theme .project-name {
+  color: var(--primary-color-dark);
+}
+
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allows description to push links to bottom */
+}
+
+.project-technologies {
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.project-technologies strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color-light);
+}
+body.dark-theme .project-technologies strong {
+  color: var(--secondary-color-dark);
+}
+
+.tech-tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background-color: var(--background-color-light); /* Or a specific tag background */
+  border: 1px solid var(--secondary-color-light);
+  color: var(--text-color-light);
+  padding: 0.25rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+body.dark-theme .tech-tag {
+  background-color: var(--background-color-dark);
+  border: 1px solid var(--secondary-color-dark);
+  color: var(--text-color-dark);
+}
+
+.project-links {
+  margin-top: auto; /* Pushes links to the bottom of the card */
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap; /* Ensure links wrap on small cards */
+}
+
+.project-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.project-link.demo-link {
+  background-color: var(--primary-color-light);
+  color: #fff; /* Or a theme variable for button text */
+}
+body.dark-theme .project-link.demo-link {
+  background-color: var(--primary-color-dark);
+}
+.project-link.demo-link:hover {
+  background-color: var(--link-hover-light);
+  transform: translateY(-1px);
+}
+body.dark-theme .project-link.demo-link:hover {
+  background-color: var(--link-hover-dark);
+}
+
+
+.project-link.source-link {
+  background-color: transparent;
+  color: var(--primary-color-light);
+  border: 1px solid var(--primary-color-light);
+}
+body.dark-theme .project-link.source-link {
+  color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+}
+.project-link.source-link:hover {
+  background-color: var(--primary-color-light); /* Slight background fill on hover */
+  color: #fff; /* Or button text color */
+  transform: translateY(-1px);
+}
+body.dark-theme .project-link.source-link:hover {
+  background-color: var(--primary-color-dark);
+  color: var(--background-color-dark); /* Assuming dark theme bg for text on primary bg */
+}

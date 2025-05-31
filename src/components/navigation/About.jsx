@@ -1,6 +1,6 @@
 // src/components/About.jsx
 import React from 'react';
-import profilePhoto from '../assets/images/profile-fabrice.jpg'; // Adjust path if needed
+import profilePhoto from '../../assets/images/profile-fabrice.jpg';
 import './About.css';
 
 const About = () => {

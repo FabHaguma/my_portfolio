@@ -1,6 +1,6 @@
 // src/components/ThemeToggleButton.jsx
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import './ThemeToggleButton.css'; // For styling the button
 
 const ThemeToggleButton = () => {

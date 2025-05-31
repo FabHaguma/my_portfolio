@@ -1,0 +1,118 @@
+/* src/components/BlogSummary.css */
+.blog-summary-section {
+  /* Uses .page-section for general padding and max-width from App.css */
+  text-align: center; /* Center content for this section */
+}
+
+.blog-summary-section h2 {
+  margin-bottom: 2rem;
+}
+
+.blog-coming-soon p,
+.blog-posts-list p {
+  font-size: 1.05rem;
+  color: var(--secondary-color-light);
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+}
+body.dark-theme .blog-coming-soon p,
+body.dark-theme .blog-posts-list p {
+  color: var(--secondary-color-dark);
+}
+
+.blog-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 750px;
+  margin: 0 auto; /* Center the list container */
+  text-align: left; /* Align text within each item to the left */
+}
+
+.blog-post-item-summary {
+  background-color: var(--card-bg-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border-light);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+body.dark-theme .blog-post-item-summary {
+  background-color: var(--card-bg-dark);
+  border-color: var(--card-border-dark);
+}
+
+.blog-post-item-summary h3 {
+  font-size: 1.25rem;
+  color: var(--primary-color-light);
+  margin-bottom: 0.5rem;
+}
+/* For link inside h3 if you add it later
+.blog-post-item-summary h3 a {
+  color: var(--primary-color-light);
+  text-decoration: none;
+}
+.blog-post-item-summary h3 a:hover {
+  text-decoration: underline;
+}
+*/
+body.dark-theme .blog-post-item-summary h3 {
+  color: var(--primary-color-dark);
+}
+/*
+body.dark-theme .blog-post-item-summary h3 a {
+  color: var(--primary-color-dark);
+}
+*/
+
+
+.post-summary-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem !important; /* Override general p margin if needed */
+  color: var(--text-color-light) !important;
+}
+body.dark-theme .post-summary-text {
+    color: var(--text-color-dark) !important;
+}
+
+
+.post-status {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--secondary-color-light) !important;
+  margin-top: 0.5rem;
+  margin-bottom: 0 !important;
+}
+body.dark-theme .post-status {
+    color: var(--secondary-color-dark) !important;
+}
+
+.view-all-blog-container {
+  margin-top: 2rem;
+}
+
+/* Example for a secondary button if you use one */
+.button-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary-color-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 2px solid var(--primary-color-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body.dark-theme .button-secondary {
+  color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+}
+.button-secondary:hover {
+  background-color: var(--primary-color-light);
+  color: #fff; /* Or themed button text color */
+}
+body.dark-theme .button-secondary:hover {
+  background-color: var(--primary-color-dark);
+  color: var(--background-color-dark); /* Or themed button text color for dark */
+}

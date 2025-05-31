@@ -1,0 +1,61 @@
+/* src/pages/ProjectsPage.css */
+.projects-page-section {
+  /* Uses .page-section for general padding and max-width from App.css */
+}
+
+.projects-page-header {
+  text-align: center;
+  margin-bottom: 2.5rem; /* More space before the grid starts */
+}
+
+.projects-page-header h2 {
+  /* Uses .page-section h2 styling */
+  margin-bottom: 0.75rem;
+}
+
+.projects-page-header p {
+  font-size: 1.1rem;
+  color: var(--secondary-color-light);
+  max-width: 700px;
+  margin: 0 auto 1rem auto;
+}
+body.dark-theme .projects-page-header p {
+  color: var(--secondary-color-dark);
+}
+
+.projects-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  grid-template-columns: 1fr; /* Mobile first: 1 column */
+  gap: 2rem; /* Gap between cards */
+}
+
+/* For tablets and up */
+@media (min-width: 600px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+
+/* For larger desktops */
+@media (min-width: 992px) {
+  .projects-grid {
+    /* Consider 3 columns if cards are not too wide and content allows */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* If you prefer a fixed 3 columns: */
+    /* grid-template-columns: repeat(3, 1fr); */
+  }
+}
+
+.no-projects-message {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--card-bg-light);
+  border: 1px dashed var(--card-border-light);
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+body.dark-theme .no-projects-message {
+  background-color: var(--card-bg-dark);
+  border-color: var(--card-border-dark);
+}
