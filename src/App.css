@@ -1,0 +1,67 @@
+/* src/App.css */
+
+/* Basic Reset (consider a more comprehensive one if needed) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* For smoother anchor link scrolling */
+}
+
+body {
+  /* font-family, background-color, color are set in theme.css */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color-light); /* Default link color */
+}
+body.dark-theme a {
+  color: var(--link-color-dark);
+}
+a:hover {
+  color: var(--link-hover-light);
+}
+body.dark-theme a:hover {
+  color: var(--link-hover-dark);
+}
+
+
+main {
+  /* This ensures that content in main does not go under a fixed/sticky header */
+  /* The actual padding-top value might need to be adjusted based on your header's height */
+  /* You can use JavaScript to dynamically set this if header height is variable */
+  /* For now, a fixed value or a CSS variable based on header height is common */
+  /* padding-top: 60px; /* Example: if header is roughly 60px tall */
+}
+
+.page-section {
+  padding: var(--section-padding); /* Use variable from theme.css */
+  max-width: 1000px; /* Or your preferred content width */
+  margin: 0 auto; /* Center sections */
+}
+
+.page-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color-light); /* Example for section titles */
+  text-align: center; /* Or as per your design */
+}
+body.dark-theme .page-section h2 {
+  color: var(--primary-color-dark);
+}
+
+/* Add more global styles as needed */

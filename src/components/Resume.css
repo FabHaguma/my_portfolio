@@ -1,0 +1,45 @@
+/* src/components/Resume.css */
+.resume-section {
+  text-align: center; /* Center content within this section */
+}
+
+.resume-section h2 {
+  margin-bottom: 1rem;
+}
+
+.resume-section p {
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resume-download-button {
+  display: inline-block;
+  background-color: var(--primary-color-light);
+  color: var(--background-color-light); /* Or a specific light text color for buttons */
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+body.dark-theme .resume-download-button {
+  background-color: var(--primary-color-dark);
+  color: var(--background-color-dark); /* Or a specific dark text color for buttons */
+}
+
+.resume-download-button:hover {
+  background-color: var(--link-hover-light); /* Using link hover for consistency */
+  color: var(--background-color-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+body.dark-theme .resume-download-button:hover {
+  background-color: var(--link-hover-dark);
+  color: var(--background-color-dark);
+}

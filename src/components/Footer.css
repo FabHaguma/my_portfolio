@@ -1,0 +1,70 @@
+/* src/components/Footer.css */
+.app-footer {
+  background-color: var(--footer-bg-light);
+  color: var(--footer-text-light);
+  padding: 2rem 2rem;
+  text-align: center;
+  /* Transition for dark mode */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme .app-footer {
+  background-color: var(--footer-bg-dark);
+  color: var(--footer-text-dark);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: var(--footer-text-light);
+  margin: 0 0.75rem;
+  text-decoration: none;
+  font-size: 1.2rem; /* Adjust as needed for icons later */
+  transition: color 0.2s ease-in-out;
+}
+
+body.dark-theme .app-footer .social-links a {
+  color: var(--footer-text-dark);
+}
+
+.social-links a:hover {
+  color: #007bff; /* Example accent color */
+}
+
+.copyright {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+  display: flex; /* Added for better alignment if using icons later */
+  justify-content: center; /* Center the links */
+  gap: 1.5rem; /* Space between links */
+}
+
+.social-links a {
+  color: var(--footer-text-light); /* From theme.css */
+  /* margin: 0 0.75rem; Removed, using gap on parent now */
+  text-decoration: none;
+  font-size: 1rem; /* Adjust if needed */
+  transition: color 0.2s ease-in-out, transform 0.2s ease;
+}
+body.dark-theme .social-links a {
+  color: var(--footer-text-dark); /* From theme.css */
+}
+
+.social-links a:hover {
+  color: var(--primary-color-light); /* Or a specific accent for footer links */
+  transform: translateY(-2px);
+}
+body.dark-theme .social-links a:hover {
+  color: var(--primary-color-dark);
+}

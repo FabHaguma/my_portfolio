@@ -1,0 +1,27 @@
+/* src/components/ThemeToggleButton.css */
+.theme-toggle-button {
+  background: none;
+  border: 1px solid var(--secondary-color-light); /* Use theme variables */
+  color: var(--text-color-light);
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--secondary-color-light);
+  color: var(--background-color-light); /* Text color on hover for light theme */
+}
+
+/* Dark theme specific styles for the button */
+body.dark-theme .theme-toggle-button {
+  border-color: var(--secondary-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-theme .theme-toggle-button:hover {
+  background-color: var(--secondary-color-dark);
+  color: var(--background-color-dark); /* Text color on hover for dark theme */
+}

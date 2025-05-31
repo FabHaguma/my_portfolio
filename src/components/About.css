@@ -1,0 +1,72 @@
+/* src/components/About.css */
+.about-section .about-content {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically on small screens */
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-image-container {
+  flex-shrink: 0; /* Prevent image from shrinking too much */
+  max-width: 250px; /* Control the size of the image container */
+  width: 100%;
+}
+
+.profile-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* Circular photo */
+  /* Or if you prefer a rounded square: border-radius: 15px; */
+  border: 5px solid var(--primary-color-light); /* Use theme variable for border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+body.dark-theme .profile-photo {
+  border-color: var(--primary-color-dark);
+}
+
+
+.about-text-container {
+  text-align: left; /* Align text to the left for readability */
+  max-width: 650px;
+}
+
+.about-text-container h2 {
+  text-align: left; /* Override global section h2 centering if needed */
+  margin-bottom: 1rem;
+  font-size: 2.2rem; /* Slightly larger for emphasis */
+}
+
+.about-text-container .tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--secondary-color-light);
+  margin-bottom: 1.5rem;
+}
+body.dark-theme .about-text-container .tagline {
+  color: var(--secondary-color-dark);
+}
+
+.about-text-container p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+  .about-section .about-content {
+    flex-direction: row; /* Image and text side-by-side */
+    align-items: flex-start; /* Align items to the top */
+    gap: 3rem;
+  }
+
+  .about-image-container {
+    /* max-width: 300px; You can adjust if needed for larger screens */
+  }
+
+  .about-text-container {
+    text-align: left;
+  }
+  .about-text-container h2 {
+    margin-top:0; /* Remove top margin if image makes it look off */
+  }
+}

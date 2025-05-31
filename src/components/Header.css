@@ -1,0 +1,126 @@
+/* src/components/Header.css */
+.app-header {
+  background-color: var(--header-bg-light);
+  color: var(--header-text-light);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Makes the header stick to the top */
+  top: 0;
+  z-index: 1000;
+  /* Transition for dark mode */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme .app-header {
+  background-color: var(--header-bg-dark);
+  color: var(--header-text-dark);
+}
+
+.header-content {
+  max-width: 1200px; /* Or your preferred max width */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* .header-content { ... display: flex; justify-content: space-between; align-items: center; } */
+.nav-and-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Space between nav and toggle button */
+}
+
+.app-header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--header-text-light);
+}
+
+body.dark-theme .app-header .logo {
+  color: var(--header-text-dark);
+}
+
+.app-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem; /* Space between nav items */
+}
+
+.app-header nav ul li a {
+  text-decoration: none;
+  color: var(--link-color-light);
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+body.dark-theme .app-header nav ul li a {
+  color: var(--link-color-dark);
+}
+
+.app-header nav ul li a:hover,
+.app-header nav ul li a.active { /* For NavLink active state */
+  color: var(--link-hover-light);
+}
+
+body.dark-theme .app-header nav ul li a:hover,
+body.dark-theme .app-header nav ul li a.active {
+  color: var(--link-hover-dark);
+}
+
+
+/* src/components/Header.css */
+/* ... existing styles ... */
+
+.menu-toggle { /* Hamburger button, initially hidden */
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem; /* Adjust for icon size */
+  cursor: pointer;
+  color: var(--header-text-light);
+}
+body.dark-theme .menu-toggle {
+  color: var(--header-text-dark);
+}
+
+@media (max-width: 768px) { /* Tablet and mobile */
+  .app-header nav ul {
+    display: none; /* Hide the nav list by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: var(--header-bg-light);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+  }
+  body.dark-theme .app-header nav ul {
+     background-color: var(--header-bg-dark);
+  }
+
+  .app-header nav ul.active { /* Class to show the menu */
+    display: flex;
+  }
+
+  .app-header nav ul li {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger button */
+  }
+
+  /* Adjust .nav-and-toggle or .header-content if needed */
+  .nav-and-toggle {
+    /* If toggle is outside nav, ensure it's visible */
+  }
+  .header-content {
+    /* Potentially adjust justify-content if nav is hidden */
+  }
+}

@@ -1,0 +1,83 @@
+/* src/styles/theme.css */
+:root {
+  /* Light Theme Variables */
+  --background-color-light: #ffffff;
+  --text-color-light: #333333;
+  --primary-color-light: #007bff;
+  --secondary-color-light: #6c757d;
+  --header-bg-light: #f8f9fa;
+  --header-text-light: #343a40;
+  --footer-bg-light: #343a40;
+  --footer-text-light: #f8f9fa;
+  --card-bg-light: #ffffff;
+  --card-border-light: #dee2e6;
+  --link-color-light: #007bff;
+  --link-hover-light: #0056b3;
+
+  /* Dark Theme Variables (initially same or define distinct dark values) */
+  --background-color-dark: #1a1a1a; /* #212529 */
+  --text-color-dark: #f8f9fa;
+  --primary-color-dark: #0d6efd; /* Or a slightly different shade for dark */
+  --secondary-color-dark: #adb5bd;
+  --header-bg-dark: #1f2327; /* #343a40 */
+  --header-text-dark: #e9ecef;
+  --footer-bg-dark: #1f2327; /* #212529 */
+  --footer-text-dark: #ced4da;
+  --card-bg-dark: #2c3034; /* #343a40 */
+  --card-border-dark: #495057;
+  --link-color-dark: #3c91ff;
+  --link-hover-dark: #6eaeff;
+
+  /* General Variables */
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --section-padding: 4rem 2rem; /* Example padding for sections */
+}
+
+/* Apply base theme (light by default) */
+body {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+  font-family: var(--font-family-sans-serif);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+/* Dark theme class */
+body.dark-theme {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Update components to use these variables */
+/* Example for Header (modify Header.css) */
+/* .app-header {
+  background-color: var(--header-bg-light);
+  color: var(--header-text-light);
+}
+body.dark-theme .app-header {
+  background-color: var(--header-bg-dark);
+  color: var(--header-text-dark);
+}
+.app-header .logo { color: var(--header-text-light); }
+body.dark-theme .app-header .logo { color: var(--header-text-dark); }
+.app-header nav ul li a { color: var(--link-color-light); }
+body.dark-theme .app-header nav ul li a { color: var(--link-color-dark); }
+.app-header nav ul li a:hover { color: var(--link-hover-light); }
+body.dark-theme .app-header nav ul li a:hover { color: var(--link-hover-dark); }
+*/
+
+/* Example for Footer (modify Footer.css) */
+/* .app-footer {
+  background-color: var(--footer-bg-light);
+  color: var(--footer-text-light);
+}
+body.dark-theme .app-footer {
+  background-color: var(--footer-bg-dark);
+  color: var(--footer-text-dark);
+}
+.app-footer .social-links a { color: var(--footer-text-light); }
+body.dark-theme .app-footer .social-links a { color: var(--footer-text-dark); }
+*/
