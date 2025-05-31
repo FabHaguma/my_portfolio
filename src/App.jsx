@@ -8,7 +8,7 @@ import About from './components/navigation/About';
 import ProjectsSummary from './components/ProjectsSummary';
 import Technologies from './components/navigation/Technologies';
 import Resume from './components/navigation/Resume';
-import BlogSummary from './components/BlogSummary';
+// import BlogSummary from './components/BlogSummary';
 import Contact from './components/navigation/Contact';
 import Footer from './components/layout/Footer';
 import ProjectsPage from './pages/ProjectsPage';
@@ -29,11 +29,6 @@ const HomePageLayout = () => {
           sectionElement.scrollIntoView({ behavior: 'smooth' });
         }
       }
-      // Optional: Clear the state after scrolling so it doesn't re-trigger on refresh
-      // This might require using history.replaceState or navigating again without state.
-      // For now, this should work for typical navigation.
-      // If you want to clear it:
-      // window.history.replaceState({}, document.title)
     } else if (!location.hash) { // If no hash and no state, scroll to top on initial load of home
       window.scrollTo(0, 0);
     }

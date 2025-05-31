@@ -4,20 +4,31 @@ import './Technologies.css';
 
 const technologiesData = [
   { name: 'HTML5', category: 'Frontend' },
-  { name: 'CSS3 (Vanilla)', category: 'Frontend' },
-  { name: 'JavaScript (ES6+)', category: 'Frontend' },
+  { name: 'CSS', category: 'Frontend' },
+  { name: 'ES6+', category: 'Frontend' },
   { name: 'React.js', category: 'Frontend' },
-  { name: 'Vite', category: 'Build Tool' },
-  // Add more backend, database, tools, etc.
-  // Example:
+  { name: 'Vite', category: 'Frontend' },
+  { name: 'Zustand', category: 'Frontend' },
+  { name: 'Tailwind CSS', category: 'Frontend' },
+  { name: 'Next.js', category: 'Frontend' },
   { name: 'Node.js', category: 'Backend' },
   { name: 'Express.js', category: 'Backend' },
   { name: 'Python', category: 'Backend' },
-  // { name: 'MongoDB', category: 'Database' },
+  { name: 'Java', category: 'Backend' },
+  { name: 'Spring Boot', category: 'Backend' },
+  { name: 'MySQL', category: 'Database' },
   { name: 'PostgreSQL', category: 'Database' },
+  { name: 'SQLite', category: 'Database' },
+  { name: 'AWS', category: 'Cloud' },
+  { name: 'Salesforce', category: 'Cloud' },
+  { name: 'Supabase', category: 'Cloud' },
+  { name: 'Google Cloud Platform (GCP)', category: 'Cloud' },
   { name: 'Git & GitHub', category: 'Tools' },
   { name: 'REST APIs', category: 'Concepts' },
   { name: 'Docker', category: 'Tools' },
+  { name: 'Github Copilot', category: 'Tools' },
+  { name: 'Microservices', category: 'Concepts' },
+  { name: 'Agile/Scrum', category: 'Concepts' },
 ];
 
 // Optional: Group by category for display

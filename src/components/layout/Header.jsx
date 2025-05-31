@@ -69,7 +69,7 @@ const Header = () => {
                 >
                   Resume
                 </a>
-              </li> */}
+              </li>
               <li>
                 <a
                   href="/my_portfolio/#blog-summary"
@@ -77,7 +77,7 @@ const Header = () => {
                 >
                   Blog
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   href="/my_portfolio/#contact"

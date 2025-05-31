@@ -2,7 +2,7 @@
 import React from 'react';
 import './ProjectCard.css';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, useSmallDescription = false }) => {
   if (!project) {
     return null; // Or some fallback UI if a project is unexpectedly undefined
   }
@@ -19,15 +19,17 @@ const ProjectCard = ({ project }) => {
       </div>
       <div className="project-info">
         <h3 className="project-name">{project.name}</h3>
-        <p className="project-description">{project.description}</p>
-        <div className="project-technologies">
-          <strong>Built with:</strong>
-          <ul className="tech-tags">
-            {project.technologies.map((tech, index) => (
-              <li key={index} className="tech-tag">{tech}</li>
-            ))}
-          </ul>
-        </div>
+        <p className="project-description">{useSmallDescription ? project.smallDescription : project.description}</p>
+        {!useSmallDescription && (
+          <div className="project-technologies">
+            <strong>Built with:</strong>
+            <ul className="tech-tags">
+              {project.technologies.map((tech, index) => (
+                <li key={index} className="tech-tag">{tech}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="project-links">
           {project.liveDemoLink && (
             <a

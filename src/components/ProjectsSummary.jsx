@@ -23,7 +23,7 @@ const ProjectsSummary = () => {
       {featuredProjects.length > 0 ? (
         <div className="projects-summary-grid">
           {featuredProjects.map(project => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} useSmallDescription={true} />
           ))}
         </div>
       ) : (
