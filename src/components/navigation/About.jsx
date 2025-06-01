@@ -22,14 +22,14 @@ const About = () => {
             full-stack development with a keen eye for detail and user-centric design.
             My journey in tech started with a simple word game on my phone, where scattered
             letters came together to form connections. The challenge sparked
-            an idea: why not create
+            an idea: why not create{' '}
             <a
               href="https://fabhaguma.github.io/letter-to-word/"
               target="_blank"
             >
-              a simple application 
-            </a> 
-            to unlock all possible combinations of real words from any given
+              a simple application
+            </a>{' '}
+            that lists all possible combinations of real words from any given
             set of letters? I envisioned a program that could systematically
             compare scattered letters against a list of known words. That
             moment of clarity marked the start of my journey into software,

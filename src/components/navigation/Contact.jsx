@@ -11,7 +11,7 @@ const Contact = () => {
   const [formStatus, setFormStatus] = useState(''); // '', 'submitting', 'success', 'error'
   const [errors, setErrors] = useState({});
 
-  const formspreeEndpoint = 'https://formspree.io/f/your_unique_code'; // <-- REPLACE WITH YOUR FORM ID
+  const formspreeEndpoint = 'https://formspree.io/f/meoanyej';
 
   const handleChange = (e) => {
     const { name, value } = e.target;

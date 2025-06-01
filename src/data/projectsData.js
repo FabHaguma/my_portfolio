@@ -22,7 +22,7 @@ export const projectsData = [
   {
     id: 2,
     name: "BAC Estimation Tool",
-    description: "This interactive web application provides users with an estimated Blood Alcohol Content (BAC) based on their weight, drinking duration, and drink inputs. Built with React and styled with Tailwind CSS, it features precise calculations using industry-standard algorithms, time-to-sober estimations, and intuitive visual feedback. The user interface is designed for a seamless and responsive experience across all devices, promoting responsible alcohol consumption.",
+    description: "An interactive web application provides users with an estimate of Blood Alcohol Content (BAC) based on their weight, drinking duration, and drink inputs. Built with React and styled with Tailwind CSS, it features precise calculations using industry-standard algorithms, time-to-sober estimations, and intuitive visual feedback. The user interface is designed for a seamless and responsive experience across all devices, promoting responsible alcohol consumption.",
     smallDescription: "A tool to estimate Blood Alcohol Content (BAC).",
     technologies: ["React", "JavaScript", "Tailwind CSS", "Jest", "Cypress"],
     liveDemoLink: "https://fabhaguma.github.io/quick-apps/bac2/new_bac_app.html",
@@ -42,7 +42,7 @@ export const projectsData = [
   {
     id: 4,
     name: "Noch Mal: Online Adaptation",
-    description: "This is a multiplayer board game that allows players to enjoy the classic Noch Mal game online. It features real-time gameplay, of rolling dice to strategically place numbers on a grid, aiming to complete rows and columns for points. Players can join games, track their scores. The game is designed to be user-friendly and engaging, with a focus on smooth gameplay and an intuitive interface.",
+    description: "An adaptation of a multiplayer board game that allows players to enjoy the classic Noch Mal game online. It features real-time gameplay, of rolling dice to strategically place numbers on a grid, aiming to complete rows and columns for points. Players can join games, track their scores. The game is designed to be user-friendly and engaging, with a focus on smooth gameplay and an intuitive interface.",
     smallDescription: "An online adaptation of the classic Noch Mal board game.",
     technologies: ["React", "Node.js", "Express", "Socket.IO", "Vanilla CSS"],
     liveDemoLink: null,

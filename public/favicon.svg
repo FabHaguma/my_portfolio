@@ -2,8 +2,8 @@
   <!-- Background: Can be your primary color or a contrasting background -->
   <rect width="100" height="100" rx="20" fill="#NONE"/> 
   <!-- Letter F: Make this a contrasting color, e.g., your light background or white -->
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
-        font-family="Arial, sans-serif" font-size="100" font-weight="bold"
+  <text x="50%" y="65%" dominant-baseline="middle" text-anchor="middle"
+        font-family="Arial, sans-serif" font-size="120" font-weight="bold"
         fill="#008080">
     F
   </text>

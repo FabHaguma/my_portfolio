@@ -8,10 +8,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/fabhaguma', /* icon: <FaGithub /> */ },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fabricehaguma/', /* icon: <FaLinkedin /> */ },
+    { name: 'GitHub', url: 'https://github.com/fabhaguma', icon: '🐙' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fabrice-haguma/', icon: '💼' },
     // Add more: e.g., Twitter, Dev.to, etc.
-    // { name: 'Twitter', url: 'https://twitter.com/yourhandle', /* icon: <FaTwitter /> */ },
+    // { name: 'Twitter', url: 'https://twitter.com/yourhandle', icon: '🐦' },
   ];
 
   return (
@@ -20,8 +20,7 @@ const Footer = () => {
         <div className="social-links">
           {socialLinks.map(link => (
             <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
-              {/* link.icon || link.name  // Use icon if available, otherwise text */}
-              {link.name} {/* For now, just text. Icons can be added in a styling phase */}
+              <span style={{marginRight: '0.5em'}}>{link.icon}</span>{link.name}
             </a>
           ))}
         </div>
