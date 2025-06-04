@@ -1,0 +1,50 @@
+/* Use theme variables for modal colors and transitions */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+.modal-content {
+  background: var(--card-bg-light);
+  color: var(--text-color-light);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  max-height: 70vh;
+  overflow: auto;
+  position: relative;
+  border: 1px solid var(--card-border-light);
+  box-shadow: 0 4px 24px var(--primary-color-light-transparent);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+body.dark-theme .modal-content {
+  background: var(--card-bg-dark);
+  color: var(--text-color-dark);
+  border: 1px solid var(--card-border-dark);
+  box-shadow: 0 4px 24px var(--primary-color-dark-transparent);
+}
+.modal-close {
+  position: absolute;
+  top: 8px; right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary-color-light);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+body.dark-theme .modal-close {
+  color: var(--primary-color-dark);
+}
+.modal-close:hover {
+  color: var(--link-hover-light);
+}
+body.dark-theme .modal-close:hover {
+  color: var(--link-hover-dark);
+}
+.modal-body {
+  margin-top: 1.5rem;
+}

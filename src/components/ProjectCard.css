@@ -109,6 +109,7 @@ body.dark-theme .tech-tag {
 .project-links {
   margin-top: auto; /* Pushes links to the bottom of the card */
   display: flex;
+  justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap; /* Ensure links wrap on small cards */
 }

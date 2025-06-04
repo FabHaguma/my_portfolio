@@ -42,7 +42,7 @@ const ProjectCard = ({ project, useSmallDescription = false }) => {
               Live Demo
             </a>
           )}
-          {project.sourceCodeLink && (
+          {!useSmallDescription && project.sourceCodeLink && (
             <a
               href={project.sourceCodeLink}
               target="_blank"

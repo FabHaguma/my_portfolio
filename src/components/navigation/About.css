@@ -1,9 +1,18 @@
 /* src/components/About.css */
 .about-section .about-content {
+
   display: flex;
   flex-direction: column; /* Stack image and text vertically on small screens */
   align-items: center;
   gap: 2rem;
+  padding-top: 2rem; /* Add some top padding for spacing */
+}
+
+.more-aboutme{
+  display: flex;
+  flex-direction: row; /* Align image and text side by side */
+  align-items: center; /* Center items vertically */
+  gap: 1rem; /* Space between image and text */
 }
 
 .about-image-container {
@@ -17,7 +26,7 @@
   height: auto;
   border-radius: 50%; /* Circular photo */
   /* Or if you prefer a rounded square: border-radius: 15px; */
-  border: 5px solid var(--primary-color-light); /* Use theme variable for border */
+  border: 3px solid var(--primary-color-light); /* Use theme variable for border */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 body.dark-theme .profile-photo {
@@ -69,4 +78,35 @@ body.dark-theme .about-text-container .tagline {
   .about-text-container h2 {
     margin-top:0; /* Remove top margin if image makes it look off */
   }
+}
+
+.about-modal-btn {
+  display: block;
+  margin: 1rem 0;
+  background: var(--card-bg-light);
+  color: var(--primary-color-light);
+  border: 1px solid var(--card-border-light);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.about-modal-btn:hover,
+.about-modal-btn:focus {
+  background: var(--primary-color-light-transparent);
+  color: var(--link-hover-light);
+  border-color: var(--primary-color-light);
+}
+body.dark-theme .about-modal-btn {
+  background: var(--card-bg-dark);
+  color: var(--primary-color-dark);
+  border: 1px solid var(--card-border-dark);
+}
+body.dark-theme .about-modal-btn:hover,
+body.dark-theme .about-modal-btn:focus {
+  background: var(--primary-color-dark-transparent);
+  color: var(--link-hover-dark);
+  border-color: var(--primary-color-dark);
 }
