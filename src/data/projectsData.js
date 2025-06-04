@@ -15,7 +15,7 @@ export const projectsData = [
     description: "Test your global knowledge with this engaging interactive game! Users identify countries on a world map, with options to filter by continent or difficulty. Built with React, Vite, and Zustand for state management, it features dynamic SVG map rendering via React Simple Maps, persistent scoring, and multiple gameplay levels. The clean, responsive interface ensures a smooth experience as you race to conquer the map!",
     smallDescription: "An interactive game to identify countries on a map.",
     technologies: ["React", "Vite", "Zustand", "React Simple Maps"],
-    liveDemoLink: "https://fabhaguma.github.io/map-guessing-game/",
+    liveDemoLink: "https://map-game.haguma.com/",
     sourceCodeLink: "https://github.com/fabhaguma/map-guessing-game",
     screenshot: projectDScreenshot,
   },
@@ -25,9 +25,9 @@ export const projectsData = [
     description: "An interactive web application provides users with an estimate of Blood Alcohol Content (BAC) based on their weight, drinking duration, and drink inputs. Built with React and styled with Tailwind CSS, it features precise calculations using industry-standard algorithms, time-to-sober estimations, and intuitive visual feedback. The user interface is designed for a seamless and responsive experience across all devices, promoting responsible alcohol consumption.",
     smallDescription: "A tool to estimate Blood Alcohol Content (BAC).",
     technologies: ["React", "JavaScript", "Tailwind CSS", "Jest", "Cypress"],
-    liveDemoLink: "https://fabhaguma.github.io/quick-apps/bac2/new_bac_app.html",
+    liveDemoLink: "https://bac.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/BAC-Estimator",
-    screenshot: projectBScreenshot, // Replace with actual imported screenshot
+    screenshot: projectBScreenshot,
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const projectsData = [
     description: "This web application allows users to explore and interact with a collection of AI-generated prompts. Users can browse through various categories, view prompt details, and save their favorite prompts for later use. The application is built with a focus on user experience, featuring smooth navigation and an intuitive interface.",
     smallDescription: "A gallery to explore AI-generated prompts.", 
     technologies: ["Supabase", "PostgreSQL", "JavaScript", "SCSS Modules"],
-    liveDemoLink: "https://fabhaguma.github.io/prompt-gallery/",
+    liveDemoLink: "https://prompt-gallery.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/prompt-gallery",
     screenshot: projectCScreenshot, // Replace with actual imported screenshot
   },
