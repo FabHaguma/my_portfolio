@@ -24,7 +24,7 @@ export const projectsData = [
     name: "BAC Estimation Tool",
     description: "An interactive web application provides users with an estimate of Blood Alcohol Content (BAC) based on their weight, drinking duration, and drink inputs. Built with React and styled with Tailwind CSS, it features precise calculations using industry-standard algorithms, time-to-sober estimations, and intuitive visual feedback. The user interface is designed for a seamless and responsive experience across all devices, promoting responsible alcohol consumption.",
     smallDescription: "A tool to estimate Blood Alcohol Content (BAC).",
-    technologies: ["React", "JavaScript", "Tailwind CSS", "Jest", "Cypress"],
+    technologies: ["React", "JavaScript", "Vite", "Jest", "Cypress"],
     liveDemoLink: "https://bac.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/BAC-Estimator",
     screenshot: projectBScreenshot,
@@ -37,7 +37,7 @@ export const projectsData = [
     technologies: ["Supabase", "PostgreSQL", "JavaScript", "SCSS Modules"],
     liveDemoLink: "https://prompt-gallery.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/prompt-gallery",
-    screenshot: projectCScreenshot, // Replace with actual imported screenshot
+    screenshot: projectCScreenshot,
   },
   {
     id: 4,

@@ -10,15 +10,35 @@
 
 .more-aboutme{
   display: flex;
-  flex-direction: row; /* Align image and text side by side */
-  align-items: center; /* Center items vertically */
-  gap: 1rem; /* Space between image and text */
+  flex-direction: column; /* Stack image and text vertically on mobile */
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .about-section .about-content {
+    flex-direction: row; /* Image and text side-by-side */
+    align-items: flex-start; /* Align items to the top */
+    gap: 3rem;
+  }
+  .more-aboutme {
+    flex-direction: row; /* Side by side on larger screens */
+    align-items: center;
+  }
 }
 
 .about-image-container {
   flex-shrink: 0; /* Prevent image from shrinking too much */
   max-width: 240px; /* Control the size of the image container */
   width: 100%;
+  margin-bottom: 1rem; /* Add spacing below image on mobile */
+}
+
+@media (min-width: 768px) {
+  .about-image-container {
+    margin-bottom: 0;
+    /* max-width: 300px; You can adjust if needed for larger screens */
+  }
 }
 
 .profile-photo {
@@ -37,6 +57,7 @@ body.dark-theme .profile-photo {
 .about-text-container {
   text-align: left; /* Align text to the left for readability */
   max-width: 650px;
+  width: 100%;
 }
 
 .about-text-container h2 {
