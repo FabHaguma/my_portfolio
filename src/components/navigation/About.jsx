@@ -12,7 +12,7 @@ const aboutParagraphs = [
       <>
         {journeyBeforeGame} The challenge sparked an idea: why not create{' '}
         <a
-          href="https://fabhaguma.github.io/letter-to-word/"
+          href="https://letter-to-word.haguma.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
