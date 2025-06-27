@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   portfolio:
+    build: .
     image: portfolio
     container_name: portfolio
     restart: unless-stopped
