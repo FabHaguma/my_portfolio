@@ -3,7 +3,7 @@ import React from 'react';
 import './Resume.css';
 
 const Resume = () => {
-  const resumePdfPath = '/my_portfolio/FabriceHaguma_Resume.pdf'; // Path relative to the deployed site's root
+  const resumePdfPath = '/FabriceHaguma_Resume.pdf'; // Path relative to the deployed site's root
 
   return (
     <section id="resume" className="page-section resume-section">

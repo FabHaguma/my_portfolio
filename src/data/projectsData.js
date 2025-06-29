@@ -31,16 +31,6 @@ export const projectsData = [
   },
   {
     id: 3,
-    name: "Prompt Gallery",
-    description: "This web application allows users to explore and interact with a collection of AI-generated prompts. Users can browse through various categories, view prompt details, and save their favorite prompts for later use. The application is built with a focus on user experience, featuring smooth navigation and an intuitive interface.",
-    smallDescription: "A gallery to explore AI-generated prompts.", 
-    technologies: ["Supabase", "PostgreSQL", "JavaScript", "SCSS Modules"],
-    liveDemoLink: "https://prompt-gallery.haguma.com/",
-    sourceCodeLink: "https://github.com/FabHaguma/prompt-gallery",
-    screenshot: projectCScreenshot,
-  },
-  {
-    id: 4,
     name: "Noch Mal: Online Adaptation",
     description: "An adaptation of a multiplayer board game that allows players to enjoy the classic Noch Mal game online. It features real-time gameplay, of rolling dice to strategically place numbers on a grid, aiming to complete rows and columns for points. Players can join games, track their scores. The game is designed to be user-friendly and engaging, with a focus on smooth gameplay and an intuitive interface.",
     smallDescription: "An online adaptation of the classic Noch Mal board game.",
@@ -49,6 +39,17 @@ export const projectsData = [
     sourceCodeLink: "https://github.com/FabHaguma/nochmal-online",
     screenshot: projectAScreenshot,
   },
+  {
+    id: 4,
+    name: "Prompt Gallery",
+    description: "This web application allows users to explore and interact with a collection of AI-generated prompts. Users can browse through various categories, view prompt details, and save their favorite prompts for later use. The application is built with a focus on user experience, featuring smooth navigation and an intuitive interface.",
+    smallDescription: "A gallery to explore AI-generated prompts.", 
+    technologies: ["Supabase", "PostgreSQL", "JavaScript", "SCSS Modules"],
+    liveDemoLink: "https://prompt-gallery.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/prompt-gallery",
+    screenshot: projectCScreenshot,
+  },
+  
   // {
   //   id: 5,
   //   name: "Project Delta",
