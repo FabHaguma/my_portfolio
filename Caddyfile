@@ -1,3 +1,0 @@
-portfolio.haguma.com {
-    reverse_proxy portfolio:80
-}

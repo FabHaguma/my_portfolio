@@ -6,12 +6,8 @@ services:
     container_name: portfolio
     restart: unless-stopped
     networks:
-      - caddy_net
+      - caddy_network # Correct network name
 
 networks:
-  caddy_net:
+  caddy_network:
     external: true
-
-volumes:
-  caddy_data:
-  caddy_config:

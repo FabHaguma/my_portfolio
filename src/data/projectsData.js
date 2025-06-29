@@ -45,7 +45,7 @@ export const projectsData = [
     description: "An adaptation of a multiplayer board game that allows players to enjoy the classic Noch Mal game online. It features real-time gameplay, of rolling dice to strategically place numbers on a grid, aiming to complete rows and columns for points. Players can join games, track their scores. The game is designed to be user-friendly and engaging, with a focus on smooth gameplay and an intuitive interface.",
     smallDescription: "An online adaptation of the classic Noch Mal board game.",
     technologies: ["React", "Node.js", "Express", "Socket.IO", "Vanilla CSS"],
-    liveDemoLink: null,
+    liveDemoLink: "https://nochmal.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/nochmal-online",
     screenshot: projectAScreenshot,
   },
