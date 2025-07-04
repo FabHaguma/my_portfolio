@@ -1,12 +1,9 @@
-// src/data/projectsData.js
 
-// Import screenshots for your projects.
-// Create a folder src/assets/images/projects/ and place your screenshots there.
-// Example:
 import projectAScreenshot from '../assets/images/projects/nochmal-screenshot.jpg';
 import projectBScreenshot from '../assets/images/projects/bac-estimation-tool.png';
 import projectCScreenshot from '../assets/images/projects/prompt-gallery-image.png';
-import projectDScreenshot from '../assets/images/projects/map-guessing-game.png'; // Placeholder image for projects without screenshots
+import projectDScreenshot from '../assets/images/projects/map-guessing-game.png';
+import projectEScreenshot from '../assets/images/projects/agebond-screenshot.png';
 
 export const projectsData = [
   {
@@ -17,18 +14,19 @@ export const projectsData = [
     technologies: ["React", "Vite", "Zustand", "React Simple Maps"],
     liveDemoLink: "https://map-game.haguma.com/",
     sourceCodeLink: "https://github.com/fabhaguma/map-guessing-game",
-    screenshot: projectDScreenshot,
+    screenshot: projectDScreenshot
   },
   {
     id: 2,
-    name: "BAC Estimation Tool",
-    description: "An interactive web application provides users with an estimate of Blood Alcohol Content (BAC) based on their weight, drinking duration, and drink inputs. Built with React and styled with Tailwind CSS, it features precise calculations using industry-standard algorithms, time-to-sober estimations, and intuitive visual feedback. The user interface is designed for a seamless and responsive experience across all devices, promoting responsible alcohol consumption.",
-    smallDescription: "A tool to estimate Blood Alcohol Content (BAC).",
-    technologies: ["React", "JavaScript", "Vite", "Jest", "Cypress"],
-    liveDemoLink: "https://bac.haguma.com/",
-    sourceCodeLink: "https://github.com/FabHaguma/BAC-Estimator",
-    screenshot: projectBScreenshot,
+    name: "AgeBond",
+    description: "An innovative web application designed to explore and calculate intricate family age relationships. Built with React, Vite, and Zustand, it features a dual-mode interface: a guided mode with pre-defined templates for precise calculations, and an AI-powered mode using Google's Gemini API for natural language queries. Users can manage family members, track life events, and ask complex questions like 'When will my sister and I have a combined age equal to our mom's?' The relationship-aware AI provides personalized, context-rich answers, making generational connections easy to visualize.",
+    smallDescription: "An AI-powered app to explore family age relationships.",
+    technologies: ["React", "Vite", "Zustand", "Google Gemini API", "CSS Modules"],
+    liveDemoLink: "https://agebond.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/agebond",
+    screenshot: projectEScreenshot
   },
+  
   {
     id: 3,
     name: "Noch Mal: Online Adaptation",
@@ -37,17 +35,27 @@ export const projectsData = [
     technologies: ["React", "Node.js", "Express", "Socket.IO", "Vanilla CSS"],
     liveDemoLink: "https://nochmal.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/nochmal-online",
-    screenshot: projectAScreenshot,
+    screenshot: projectAScreenshot
   },
   {
     id: 4,
+    name: "BAC Estimation Tool",
+    description: "An interactive web application provides users with an estimate of Blood Alcohol Content (BAC) based on their weight, drinking duration, and drink inputs. Built with React and styled with Tailwind CSS, it features precise calculations using industry-standard algorithms, time-to-sober estimations, and intuitive visual feedback. The user interface is designed for a seamless and responsive experience across all devices, promoting responsible alcohol consumption.",
+    smallDescription: "A tool to estimate Blood Alcohol Content (BAC).",
+    technologies: ["React", "JavaScript", "Vite", "Jest", "Cypress"],
+    liveDemoLink: "https://bac.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/BAC-Estimator",
+    screenshot: projectBScreenshot
+  },
+  {
+    id: 5,
     name: "Prompt Gallery",
     description: "This web application allows users to explore and interact with a collection of AI-generated prompts. Users can browse through various categories, view prompt details, and save their favorite prompts for later use. The application is built with a focus on user experience, featuring smooth navigation and an intuitive interface.",
     smallDescription: "A gallery to explore AI-generated prompts.", 
     technologies: ["Supabase", "PostgreSQL", "JavaScript", "SCSS Modules"],
     liveDemoLink: "https://prompt-gallery.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/prompt-gallery",
-    screenshot: projectCScreenshot,
+    screenshot: projectCScreenshot
   },
   
   // {
