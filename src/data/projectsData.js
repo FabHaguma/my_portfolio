@@ -5,6 +5,7 @@ import project_C_Screenshot from '../assets/images/projects/prompt-gallery-image
 import project_D_Screenshot from '../assets/images/projects/map-guessing-game.png';
 import project_E_Screenshot from '../assets/images/projects/agebond-screenshot.png';
 import project_F_Screenshot from '../assets/images/projects/yt-subs-screenshot.png';
+import project_G_Screenshot from '../assets/images/projects/haguma-art-editor-screenshot.png';
 
 export const projectsData = [
   {
@@ -29,16 +30,26 @@ export const projectsData = [
   },
   {
     id: 3,
+    name: "Haguma Art Editor",
+    description: "A full-stack web application for image editing and manipulation. Built with a modern React frontend and Python Flask backend, it features real-time image processing capabilities including resizing, cropping with presets, rotation, and flipping. Users can apply filters like grayscale, adjust brightness and contrast, and download their creations in multiple formats. The application utilizes Docker for containerization and provides a responsive, intuitive interface for seamless editing.",
+    smallDescription: "A full-stack web application for real-time image editing and manipulation.",
+    technologies: ["React", "Python", "Flask", "Vite", "Docker", "Pillow", "CSS Modules"],
+    liveDemoLink: "https://arteditor.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/haguma-art-editor",
+    screenshot: project_G_Screenshot,
+  },
+  {
+    id: 4,
     name: "Map Guessing Game",
     description: "Test your global knowledge with this engaging interactive game! Users identify countries on a world map, with options to filter by continent or difficulty. Built with React, Vite, and Zustand for state management, it features dynamic SVG map rendering via React Simple Maps, persistent scoring, and multiple gameplay levels. The clean, responsive interface ensures a smooth experience as you race to conquer the map!",
     smallDescription: "An interactive game to identify countries on a map.",
     technologies: ["React", "Vite", "Zustand", "React Simple Maps"],
     liveDemoLink: "https://map-game.haguma.com/",
-    sourceCodeLink: "https://github.com/fabhaguma/map-guessing-game",
+    sourceCodeLink: "https://github.com/FabHaguma/map-guessing-game",
     screenshot: project_D_Screenshot
   },
   {
-    id: 4,
+    id: 5,
     name: "AgeBond",
     description: "An innovative web application designed to explore and calculate intricate family age relationships. Built with React, Vite, and Zustand, it features a dual-mode interface: a guided mode with pre-defined templates for precise calculations, and an AI-powered mode using Google's Gemini API for natural language queries. Users can manage family members, track life events, and ask complex questions like 'When will my sister and I have a combined age equal to our mom's?' The relationship-aware AI provides personalized, context-rich answers, making generational connections easy to visualize.",
     smallDescription: "An AI-powered app to explore family age relationships.",
@@ -49,7 +60,7 @@ export const projectsData = [
   },
   
   {
-    id: 5,
+    id: 6,
     name: "Noch Mal: Online Adaptation",
     description: "An adaptation of a multiplayer board game that allows players to enjoy the classic Noch Mal game online. It features real-time gameplay, of rolling dice to strategically place numbers on a grid, aiming to complete rows and columns for points. Players can join games, track their scores. The game is designed to be user-friendly and engaging, with a focus on smooth gameplay and an intuitive interface.",
     smallDescription: "An online adaptation of the classic Noch Mal board game.",
@@ -59,7 +70,7 @@ export const projectsData = [
     screenshot: project_A_Screenshot
   },
   {
-    id: 6,
+    id: 7,
     name: "Prompt Gallery",
     description: "This web application allows users to explore and interact with a collection of AI-generated prompts. Users can browse through various categories, view prompt details, and save their favorite prompts for later use. The application is built with a focus on user experience, featuring smooth navigation and an intuitive interface.",
     smallDescription: "A gallery to explore AI-generated prompts.", 
