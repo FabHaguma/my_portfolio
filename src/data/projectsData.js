@@ -7,6 +7,16 @@ import project_E_Screenshot from '../assets/images/projects/agebond-screenshot.p
 import project_F_Screenshot from '../assets/images/projects/yt-subs-screenshot.png';
 import project_G_Screenshot from '../assets/images/projects/haguma-art-editor-screenshot.png';
 
+// Featured projects displayed on the landing page (in order of appearance)
+// To add a new featured project: Add its ID to this array
+// To change featured order: Rearrange the IDs below
+export const featuredProjectIds = [1, 2, 3];
+
+// How to add a new project:
+// 1. Add project screenshot to src/assets/images/projects/
+// 2. Import the screenshot at the top of this file
+// 3. Add a new project object below with a unique ID
+// 4. To feature it on the landing page, add its ID to featuredProjectIds array above
 export const projectsData = [
   {
     id: 1,

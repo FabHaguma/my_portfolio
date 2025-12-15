@@ -1,17 +1,15 @@
 // src/components/Footer.jsx
 import React from 'react';
 import './Footer.css';
-// Optional: Import SVG icons or a font icon library if you want to use icons
-// import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import githubIcon from '../../assets/icons/github.png';
+import linkedinIcon from '../../assets/icons/linkedin.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/fabhaguma', icon: '🐙' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fabrice-haguma/', icon: '💼' },
-    // Add more: e.g., Twitter, Dev.to, etc.
-    // { name: 'Twitter', url: 'https://twitter.com/yourhandle', icon: '🐦' },
+    { name: 'GitHub', url: 'https://github.com/fabhaguma', icon: githubIcon },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fabrice-haguma/', icon: linkedinIcon },
   ];
 
   return (
@@ -19,8 +17,11 @@ const Footer = () => {
       <div className="footer-content">
         <div className="social-links">
           {socialLinks.map(link => (
-            <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
-              <span style={{marginRight: '0.5em'}}>{link.icon}</span>{link.name}
+            <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="social-link">
+              <span style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={link.icon} alt={link.name} style={{ width: '20px', height: '20px', marginRight: '0.5em' }} />
+                <span>{link.name}</span>
+              </span>
             </a>
           ))}
         </div>

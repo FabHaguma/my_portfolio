@@ -1,14 +1,15 @@
 // src/components/ProjectsSummary.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { projectsData } from '../data/projectsData';
+import { projectsData, featuredProjectIds } from '../data/projectsData';
 import ProjectCard from './ProjectCard'; // Re-use the ProjectCard component
 import './ProjectsSummary.css';
 
 const ProjectsSummary = () => {
-  // Select first 2 or 3 projects as featured, or implement a 'featured: true' flag in projectsData
-  const numberOfFeaturedProjects = 3;
-  const featuredProjects = projectsData.slice(0, numberOfFeaturedProjects);
+  // Filter and order projects based on featuredProjectIds array
+  const featuredProjects = featuredProjectIds
+    .map(id => projectsData.find(project => project.id === id))
+    .filter(project => project !== undefined); // Remove any IDs that don't match existing projects
 
   if (featuredProjects.length === 0 && projectsData.length > 0) {
     // Fallback if slicing results in empty but data exists (e.g. numberOfFeaturedProjects = 0)
@@ -32,7 +33,7 @@ const ProjectsSummary = () => {
         </p>
       )}
 
-      {projectsData.length > numberOfFeaturedProjects && (
+      {projectsData.length > featuredProjectIds.length && (
         <div className="view-all-projects-container">
           <Link to="/projects" className="button-primary view-all-button">
             View All Projects
