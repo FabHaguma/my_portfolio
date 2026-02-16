@@ -40,9 +40,9 @@ const About = () => {
         <div className="about-text-container">
           <h2>About Me</h2>
           <p className="tagline">
-            I build seamless and efficient web applications, bridging the gap
-            between engaging user interfaces and robust back-end logic. Based in
-            Kigali, Rwanda.
+            I architect technical solutions that turn complexity into a competitive advantage. 
+            With a background in full-stack development and a focus on system optimization, I bridge the gap between business strategy and robust engineering. 
+            Based in Kigali, Rwanda.
           </p>
           <div className="more-aboutme">
             {aboutParagraphs.map((para, idx) => (
