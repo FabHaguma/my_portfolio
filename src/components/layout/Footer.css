@@ -4,13 +4,6 @@
   color: var(--footer-text-light);
   padding: 2rem 2rem;
   text-align: center;
-  /* Transition for dark mode */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.dark-theme .app-footer {
-  background-color: var(--footer-bg-dark);
-  color: var(--footer-text-dark);
 }
 
 .footer-content {
@@ -28,10 +21,6 @@ body.dark-theme .app-footer {
   text-decoration: none;
   font-size: 1.2rem; /* Adjust as needed for icons later */
   transition: color 0.2s ease-in-out;
-}
-
-body.dark-theme .app-footer .social-links a {
-  color: var(--footer-text-dark);
 }
 
 .social-links a:hover {
@@ -57,14 +46,7 @@ body.dark-theme .app-footer .social-links a {
   font-size: 1rem; /* Adjust if needed */
   transition: color 0.2s ease-in-out, transform 0.2s ease;
 }
-body.dark-theme .social-links a {
-  color: var(--footer-text-dark); /* From theme.css */
-}
-
 .social-links a:hover {
   color: var(--primary-color-light); /* Or a specific accent for footer links */
   transform: translateY(-2px);
-}
-body.dark-theme .social-links a:hover {
-  color: var(--primary-color-dark);
 }

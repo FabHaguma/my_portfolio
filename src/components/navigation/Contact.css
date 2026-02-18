@@ -1,10 +1,48 @@
 /* src/components/Contact.css */
 .contact-section {
-  /* Uses .page-section for general padding and max-width from App.css */
+  /* Compact by default – reduced vertical padding */
+  padding: 2rem 2rem !important;
+  text-align: center;
+  transition: padding 0.3s ease;
+}
+
+.contact-section--expanded {
+  padding: var(--section-padding) !important;
 }
 
 .contact-section h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Collapsed state --- */
+.contact-collapsed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-tagline {
+  color: var(--secondary-color-light);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.contact-open-btn {
+  display: inline-block;
+  background-color: var(--primary-color-light);
+  color: #ffffff;
+  padding: 0.6rem 1.75rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-open-btn:hover {
+  background-color: var(--link-hover-light);
 }
 
 .contact-intro {
@@ -14,10 +52,6 @@
   font-size: 1.05rem;
   color: var(--secondary-color-light);
 }
-body.dark-theme .contact-intro {
-  color: var(--secondary-color-dark);
-}
-
 .contact-form {
   max-width: 650px;
   margin: 0 auto;
@@ -26,10 +60,6 @@ body.dark-theme .contact-intro {
   border-radius: 8px;
   border: 1px solid var(--card-border-light);
   box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-}
-body.dark-theme .contact-form {
-  background-color: var(--card-bg-dark);
-  border-color: var(--card-border-dark);
 }
 
 .form-group {
@@ -42,10 +72,6 @@ body.dark-theme .contact-form {
   font-weight: 500;
   color: var(--text-color-light);
 }
-body.dark-theme .form-group label {
-  color: var(--text-color-dark);
-}
-
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
@@ -58,14 +84,6 @@ body.dark-theme .form-group label {
   color: var(--text-color-light);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-body.dark-theme .form-group input[type="text"],
-body.dark-theme .form-group input[type="email"],
-body.dark-theme .form-group textarea {
-  border-color: var(--card-border-dark);
-  background-color: var(--background-color-dark);
-  color: var(--text-color-dark);
-}
-
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
@@ -73,14 +91,6 @@ body.dark-theme .form-group textarea {
   border-color: var(--primary-color-light);
   box-shadow: 0 0 0 2px var(--primary-color-light-transparent, rgba(0, 123, 255, 0.25)); /* Define --primary-color-light-transparent in theme.css */
 }
-body.dark-theme .form-group input[type="text"]:focus,
-body.dark-theme .form-group input[type="email"]:focus,
-body.dark-theme .form-group textarea:focus {
-  border-color: var(--primary-color-dark);
-  box-shadow: 0 0 0 2px var(--primary-color-dark-transparent, rgba(13, 110, 253, 0.25)); /* Define --primary-color-dark-transparent in theme.css */
-}
-
-
 /* Input error styling */
 .form-group input.input-error,
 .form-group textarea.input-error {
@@ -111,35 +121,16 @@ body.dark-theme .form-group textarea:focus {
   border: 1px solid #c0c0c0;
   color: #333;
 }
-body.dark-theme .status-message.submitting {
-  background-color: #424242;
-  border-color: #505050;
-  color: #f0f0f0;
-}
-
 .status-message.success {
   background-color: #d4edda; /* Light green */
   border: 1px solid #c3e6cb;
   color: #155724;
 }
-body.dark-theme .status-message.success {
-  background-color: #203d24;
-  border-color: #2a522e;
-  color: #c3e6cb;
-}
-
 .status-message.error {
   background-color: #f8d7da; /* Light red */
   border: 1px solid #f5c6cb;
   color: #721c24;
 }
-body.dark-theme .status-message.error {
-  background-color: #442023;
-  border-color: #5a2a2d;
-  color: #f5c6cb;
-}
-
-
 .submit-button {
   display: inline-block;
   background-color: var(--primary-color-light);
@@ -152,19 +143,29 @@ body.dark-theme .status-message.error {
   cursor: pointer;
   transition: background-color 0.3s ease, opacity 0.3s ease;
 }
-body.dark-theme .submit-button {
-  background-color: var(--primary-color-dark);
-  color: var(--background-color-dark); /* Adjust if needed */
-}
-
 .submit-button:hover:not(:disabled) {
   background-color: var(--link-hover-light);
-}
-body.dark-theme .submit-button:hover:not(:disabled) {
-  background-color: var(--link-hover-dark);
 }
 
 .submit-button:disabled {
   opacity: 0.65;
   cursor: not-allowed;
+}
+
+.contact-cancel-btn {
+  display: inline-block;
+  background: none;
+  color: var(--secondary-color-light);
+  border: 1px solid var(--card-border-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-left: 0.75rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-cancel-btn:hover {
+  color: var(--text-color-light);
+  border-color: var(--secondary-color-light);
 }

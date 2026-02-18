@@ -1,7 +1,6 @@
 // src/components/Header.jsx
 import React from 'react';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
-import ThemeToggleButton from './ThemeToggleButton';
 import './Header.css';
 
 const Header = () => {
@@ -88,7 +87,6 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <ThemeToggleButton />
         </div>
       </div>
     </header>

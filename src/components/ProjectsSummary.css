@@ -42,10 +42,6 @@
   color: var(--secondary-color-light);
   margin-bottom: 2.5rem;
 }
-body.dark-theme .no-projects-summary-message {
-  color: var(--secondary-color-dark);
-}
-
 .view-all-projects-container {
   text-align: center;
   margin-top: 1rem; /* Add some space if there were projects */
@@ -64,15 +60,7 @@ body.dark-theme .no-projects-summary-message {
   border: 2px solid transparent;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-body.dark-theme .button-primary {
-  background-color: var(--primary-color-dark);
-  color: var(--background-color-dark); /* Text on primary button for dark theme */
-}
-
 .button-primary:hover {
   background-color: var(--link-hover-light);
   transform: translateY(-2px);
-}
-body.dark-theme .button-primary:hover {
-  background-color: var(--link-hover-dark);
 }

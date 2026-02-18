@@ -49,11 +49,6 @@
   border: 3px solid var(--primary-color-light); /* Use theme variable for border */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-body.dark-theme .profile-photo {
-  border-color: var(--primary-color-dark);
-}
-
-
 .about-text-container {
   text-align: left; /* Align text to the left for readability */
   max-width: 650px;
@@ -72,10 +67,6 @@ body.dark-theme .profile-photo {
   color: var(--secondary-color-light);
   margin-bottom: 1.5rem;
 }
-body.dark-theme .about-text-container .tagline {
-  color: var(--secondary-color-dark);
-}
-
 .about-text-container p {
   margin-bottom: 1rem;
   line-height: 1.7;
@@ -119,15 +110,4 @@ body.dark-theme .about-text-container .tagline {
   background: var(--primary-color-light-transparent);
   color: var(--link-hover-light);
   border-color: var(--primary-color-light);
-}
-body.dark-theme .about-modal-btn {
-  background: var(--card-bg-dark);
-  color: var(--primary-color-dark);
-  border: 1px solid var(--card-border-dark);
-}
-body.dark-theme .about-modal-btn:hover,
-body.dark-theme .about-modal-btn:focus {
-  background: var(--primary-color-dark-transparent);
-  color: var(--link-hover-dark);
-  border-color: var(--primary-color-dark);
 }

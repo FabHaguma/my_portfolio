@@ -7,13 +7,6 @@
   position: sticky; /* Makes the header stick to the top */
   top: 0;
   z-index: 1000;
-  /* Transition for dark mode */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.dark-theme .app-header {
-  background-color: var(--header-bg-dark);
-  color: var(--header-text-dark);
 }
 
 .header-content {
@@ -38,10 +31,6 @@ body.dark-theme .app-header {
   color: var(--header-text-light);
 }
 
-body.dark-theme .app-header .logo {
-  color: var(--header-text-dark);
-}
-
 .app-header nav ul {
   list-style: none;
   padding: 0;
@@ -57,18 +46,9 @@ body.dark-theme .app-header .logo {
   transition: color 0.2s ease-in-out;
 }
 
-body.dark-theme .app-header nav ul li a {
-  color: var(--link-color-dark);
-}
-
 .app-header nav ul li a:hover,
 .app-header nav ul li a.active { /* For NavLink active state */
   color: var(--link-hover-light);
-}
-
-body.dark-theme .app-header nav ul li a:hover,
-body.dark-theme .app-header nav ul li a.active {
-  color: var(--link-hover-dark);
 }
 
 
@@ -83,9 +63,6 @@ body.dark-theme .app-header nav ul li a.active {
   cursor: pointer;
   color: var(--header-text-light);
 }
-body.dark-theme .menu-toggle {
-  color: var(--header-text-dark);
-}
 
 @media (max-width: 768px) { /* Tablet and mobile */
   .app-header nav ul {
@@ -98,9 +75,6 @@ body.dark-theme .menu-toggle {
     background-color: var(--header-bg-light);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 1rem 0;
-  }
-  body.dark-theme .app-header nav ul {
-     background-color: var(--header-bg-dark);
   }
 
   .app-header nav ul.active { /* Class to show the menu */

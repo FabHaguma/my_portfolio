@@ -20,12 +20,6 @@
   box-shadow: 0 4px 24px var(--primary-color-light-transparent);
   transition: background 0.3s, color 0.3s, border 0.3s;
 }
-body.dark-theme .modal-content {
-  background: var(--card-bg-dark);
-  color: var(--text-color-dark);
-  border: 1px solid var(--card-border-dark);
-  box-shadow: 0 4px 24px var(--primary-color-dark-transparent);
-}
 .modal-close {
   position: absolute;
   top: 8px; right: 12px;
@@ -36,14 +30,8 @@ body.dark-theme .modal-content {
   cursor: pointer;
   transition: color 0.3s;
 }
-body.dark-theme .modal-close {
-  color: var(--primary-color-dark);
-}
 .modal-close:hover {
   color: var(--link-hover-light);
-}
-body.dark-theme .modal-close:hover {
-  color: var(--link-hover-dark);
 }
 .modal-body {
   margin-top: 1.5rem;

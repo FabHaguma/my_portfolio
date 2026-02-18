@@ -13,6 +13,7 @@ const technologiesData = [
   
   // Frontend
   { name: 'HTML/CSS', category: 'Frontend' },
+  { name: 'JavaScript', category: 'Frontend' },
   { name: 'ES6+', category: 'Frontend' },
   { name: 'Vite', category: 'Frontend' },
   { name: 'Next.js', category: 'Frontend' },
@@ -21,18 +22,23 @@ const technologiesData = [
   { name: 'Tailwind CSS', category: 'Frontend' },
   
   // Database
+  { name: 'SQL', category: 'Database' },
   { name: 'MySQL', category: 'Database' },
   { name: 'PostgreSQL', category: 'Database' },
   { name: 'SQLite', category: 'Database' },
   { name: 'MongoDB', category: 'Database' },
 
-  // Tools
-  { name: 'Git & GitHub', category: 'Tools' },
-  { name: 'Docker', category: 'Tools' },
-  { name: 'Github Copilot', category: 'Tools' },
-  { name: 'Postman', category: 'Tools' },
-  { name: 'Figma', category: 'Tools' },
-  { name: 'Jira', category: 'Tools' },  
+  // Dev Tools
+  { name: 'Git & GitHub', category: 'Dev Tools' },
+  { name: 'Docker', category: 'Dev Tools' },
+  { name: 'Postman', category: 'Dev Tools' },
+  { name: 'Figma', category: 'Dev Tools' },
+
+  // AI Tools
+  { name: 'Github Copilot', category: 'AI Tools' },
+  { name: 'ChatGPT', category: 'AI Tools' },
+  { name: 'Google AI Studio', category: 'AI Tools' },
+
   // Cloud
   { name: 'AWS', category: 'Cloud' },
   { name: 'Azure', category: 'Cloud' },
@@ -44,6 +50,15 @@ const technologiesData = [
   { name: 'REST APIs', category: 'Concepts' },
   { name: 'Microservices', category: 'Concepts' },
   { name: 'Agile/Scrum', category: 'Concepts' },
+
+  // Productivity
+  { name: 'Jira', category: 'Productivity' },
+  { name: 'Asana', category: 'Productivity' },
+  { name: 'Zapier', category: 'Productivity' },
+  { name: 'Slack', category: 'Productivity' },
+  { name: 'Tableau/Power BI', category: 'Productivity' },
+  { name: 'Microsoft Office & Teams', category: 'Productivity' },
+  { name: 'Google Workspace & Analytics', category: 'Productivity' },
 ];
 
 // Optional: Group by category for display

@@ -19,10 +19,6 @@
   max-width: 700px;
   margin: 0 auto 1rem auto;
 }
-body.dark-theme .projects-page-header p {
-  color: var(--secondary-color-dark);
-}
-
 .projects-grid {
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
@@ -54,8 +50,4 @@ body.dark-theme .projects-page-header p {
   border: 1px dashed var(--card-border-light);
   border-radius: 8px;
   margin-top: 2rem;
-}
-body.dark-theme .no-projects-message {
-  background-color: var(--card-bg-dark);
-  border-color: var(--card-border-dark);
 }

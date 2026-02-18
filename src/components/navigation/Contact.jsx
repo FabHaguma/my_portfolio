@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -58,6 +59,8 @@ const Contact = () => {
       if (response.ok) {
         setFormStatus('success');
         setFormData({ name: '', email: '', message: '' }); // Clear form
+        // Optionally collapse after success
+        // setIsExpanded(false);
       } else {
         const data = await response.json();
         if (data.errors) {
@@ -79,12 +82,30 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="page-section contact-section">
+    <section id="contact" className={`page-section contact-section${isExpanded ? ' contact-section--expanded' : ''}`}>
       <h2>Get In Touch</h2>
-      <p className="contact-intro">
-        Have a project in mind, a question, or just want to say hi?
-        Feel free to reach out! I'm always open to discussing new opportunities and collaborations.
-      </p>
+
+      {!isExpanded && (
+        <div className="contact-collapsed">
+          <p className="contact-tagline">
+            Have a project in mind or just want to say hi?
+          </p>
+          <button
+            type="button"
+            className="contact-open-btn"
+            onClick={() => setIsExpanded(true)}
+          >
+            Say Hello
+          </button>
+        </div>
+      )}
+
+      {isExpanded && (
+        <>
+          <p className="contact-intro">
+            Have a project in mind, a question, or just want to say hi?
+            Feel free to reach out! I'm always open to discussing new opportunities and collaborations.
+          </p>
 
       <form onSubmit={handleSubmit} className="contact-form" noValidate>
         <div className="form-group">
@@ -152,7 +173,16 @@ const Contact = () => {
         <button type="submit" className="submit-button" disabled={formStatus === 'submitting'}>
           {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
         </button>
+        <button
+          type="button"
+          className="contact-cancel-btn"
+          onClick={() => { setIsExpanded(false); setFormStatus(''); setErrors({}); }}
+        >
+          Cancel
+        </button>
       </form>
+        </>
+      )}
     </section>
   );
 };
