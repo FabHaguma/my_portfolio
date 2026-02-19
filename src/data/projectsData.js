@@ -1,11 +1,11 @@
 
-import project_A_Screenshot from '../assets/images/projects/nochmal-screenshot.jpg';
-import project_B_Screenshot from '../assets/images/projects/bac-estimation-tool.png';
-import project_C_Screenshot from '../assets/images/projects/prompt-gallery-image.png';
-import project_D_Screenshot from '../assets/images/projects/map-guessing-game.png';
-import project_E_Screenshot from '../assets/images/projects/agebond-screenshot.png';
-import project_F_Screenshot from '../assets/images/projects/yt-subs-screenshot.png';
-import project_G_Screenshot from '../assets/images/projects/haguma-art-editor-screenshot.png';
+import project_nochmal from '../assets/images/projects/nochmal-screenshot.jpg';
+import project_bac from '../assets/images/projects/bac-estimation-tool.png';
+import project_mapgame from '../assets/images/projects/map-guessing-game.png';
+import project_agebond from '../assets/images/projects/agebond-screenshot.png';
+import project_ytsubs from '../assets/images/projects/yt-subs-screenshot.png';
+import project_arteditor from '../assets/images/projects/haguma-art-editor-screenshot.png';
+import project_text2json from '../assets/images/projects/text2json-screenshot.png';
 
 // Featured projects displayed on the landing page (in order of appearance)
 // To add a new featured project: Add its ID to this array
@@ -26,7 +26,7 @@ export const projectsData = [
     technologies: ["Python", "fastapi", "React", "Node.js", "Express", "Google Gemini AI", "yt-dlp", "Docker"],
     liveDemoLink: "https://www.ytsubs.haguma.com/",
     sourceCodeLink: "https://github.com/fabhaguma/yt-subs",
-    screenshot: project_F_Screenshot
+    screenshot: project_ytsubs
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ export const projectsData = [
     technologies: ["React", "JavaScript", "Vite", "Jest", "Cypress"],
     liveDemoLink: "https://www.bac.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/BAC-Estimator",
-    screenshot: project_B_Screenshot
+    screenshot: project_bac
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ export const projectsData = [
     technologies: ["React", "Python", "Flask", "Vite", "Docker", "Pillow", "CSS Modules"],
     liveDemoLink: "https://www.arteditor.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/haguma-art-editor",
-    screenshot: project_G_Screenshot,
+    screenshot: project_arteditor,
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ export const projectsData = [
     technologies: ["React", "Vite", "Zustand", "React Simple Maps"],
     liveDemoLink: "https://map-game.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/map-guessing-game",
-    screenshot: project_D_Screenshot
+    screenshot: project_mapgame
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ export const projectsData = [
     technologies: ["React", "Vite", "Zustand", "Google Gemini API", "CSS Modules"],
     liveDemoLink: "https://www.agebond.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/agebond",
-    screenshot: project_E_Screenshot
+    screenshot: project_agebond
   },
   
   {
@@ -77,17 +77,17 @@ export const projectsData = [
     technologies: ["React", "Node.js", "Express", "Socket.IO", "Vanilla CSS"],
     liveDemoLink: "https://www.nochmal.haguma.com/",
     sourceCodeLink: "https://github.com/FabHaguma/nochmal-online",
-    screenshot: project_A_Screenshot
+    screenshot: project_nochmal
   },
   {
     id: 7,
-    name: "Prompt Gallery",
-    description: "This web application allows users to explore and interact with a collection of AI-generated prompts. Users can browse through various categories, view prompt details, and save their favorite prompts for later use. The application is built with a focus on user experience, featuring smooth navigation and an intuitive interface.",
-    smallDescription: "A gallery to explore AI-generated prompts.", 
-    technologies: ["Supabase", "PostgreSQL", "JavaScript", "SCSS Modules"],
-    liveDemoLink: "https://prompt-gallery.haguma.com/",
-    sourceCodeLink: "https://github.com/FabHaguma/prompt-gallery",
-    screenshot: project_C_Screenshot
+    name: "Text-to-JSON",
+    description: "A powerful, AI-driven tool that extracts structured JSON data from raw, unstructured text using AI. It features a robust FastAPI backend and a modern, responsive frontend interface. Users can input any text, and the application will parse it to generate a clean JSON output, making it ideal for data extraction, content organization, and automation tasks. The intuitive design ensures a seamless user experience, while the advanced AI capabilities provide accurate and efficient data parsing.",
+    smallDescription: "An AI-powered tool to convert unstructured text into structured JSON data.", 
+    technologies: ["Python", "Google Gemini", "Tailwind CSS", "Docker"],
+    liveDemoLink: "https://text2json.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/text_to_json",
+    screenshot: project_text2json
   },
   
   // {
