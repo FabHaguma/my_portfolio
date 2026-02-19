@@ -40,9 +40,9 @@ const About = () => {
         <div className="about-text-container">
           <h2>About Me</h2>
           <p className="tagline">
-            I architect technical solutions that turn complexity into a competitive advantage. 
-            With a background in full-stack development and a focus on system optimization, I bridge the gap between business strategy and robust engineering. 
-            Based in Kigali, Rwanda.
+            I am a Solution Engineer, specializing in architecting technical solutions that turn complexity into a competitive advantage. 
+            Leveraging my expertise in full-stack development and system optimization, I seamlessly bridge business strategy with robust engineering. 
+            Currently based in Kigali, Rwanda.
           </p>
           <div className="more-aboutme">
             {aboutParagraphs.map((para, idx) => (

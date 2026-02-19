@@ -44,7 +44,7 @@ main {
 
 .page-section {
   padding: var(--section-padding); /* Use variable from theme.css */
-  max-width: 1000px; /* Or your preferred content width */
+  max-width: 1200px; /* Or your preferred content width */
   margin: 0 auto; /* Center sections */
 }
 

@@ -3,6 +3,7 @@ import React from 'react';
 import './Footer.css';
 import githubIcon from '../../assets/icons/github.png';
 import linkedinIcon from '../../assets/icons/linkedin.png';
+import emailIcon from '../../assets/icons/mail.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,6 +11,7 @@ const Footer = () => {
   const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/fabhaguma', icon: githubIcon },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fabrice-haguma/', icon: linkedinIcon },
+    { name: 'Email', url: 'mailto:fabrice@haguma.com', icon: emailIcon },
   ];
 
   return (
