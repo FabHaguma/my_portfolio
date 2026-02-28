@@ -7,6 +7,7 @@ import project_ytsubs from '../assets/images/projects/yt-subs-screenshot.png';
 import project_arteditor from '../assets/images/projects/haguma-art-editor-screenshot.png';
 import project_text2json from '../assets/images/projects/text2json-screenshot.png';
 import project_jobScraper from '../assets/images/projects/job-scraper_screenshot.png';
+import project_chatcipher from '../assets/images/projects/chatcipher-screenshot.png';
 
 // Featured projects displayed on the landing page (in order of appearance)
 // To add a new featured project: Add its ID to this array
@@ -82,13 +83,13 @@ export const projectsData = [
   },
   {
     id: 7,
-    name: "AgeBond",
-    description: "An innovative web application designed to explore and calculate intricate family age relationships. Built with React, Vite, and Zustand, it features a dual-mode interface: a guided mode with pre-defined templates for precise calculations, and an AI-powered mode using Google's Gemini API for natural language queries. Users can manage family members, track life events, and ask complex questions like 'When will my sister and I have a combined age equal to our mom's?' The relationship-aware AI provides personalized, context-rich answers, making generational connections easy to visualize.",
-    smallDescription: "An AI-powered app to explore family age relationships.",
-    technologies: ["React", "Vite", "Zustand", "Google Gemini API", "CSS Modules"],
-    liveDemoLink: "https://www.agebond.haguma.com/",
-    sourceCodeLink: "https://github.com/FabHaguma/agebond",
-    screenshot: project_agebond
+    name: "Chat Cipher",
+    description: "A sleek, browser-based Caesar cipher tool that encrypts and decrypts text using a configurable shift key and hex encoding, all running 100% client-side with zero dependencies. Each letter is shifted by 1 to 25 positions in the alphabet, then converted character-by-character to two-digit hex codes for safe sharing. Features include instant decryption by pasting hex-encoded cipher text, one-click swap between plain and cipher fields, and copy-to-clipboard buttons. No data ever leaves the browser, no server, no tracking, making it a privacy-first solution with a dark-themed, mobile-friendly interface.",
+    smallDescription: "A browser-based Caesar cipher tool for encrypting and decrypting text with hex encoding.",
+    technologies: ["HTML5", "JavaScript", "Tailwind CSS"],
+    liveDemoLink: "https://fabhaguma.github.io/chatcipher/",
+    sourceCodeLink: "https://github.com/FabHaguma/chatcipher",
+    screenshot: project_chatcipher
   },
   {
     id: 8,
@@ -100,9 +101,19 @@ export const projectsData = [
     sourceCodeLink: "https://github.com/FabHaguma/nochmal-online",
     screenshot: project_nochmal
   },
-  
+  {
+    id: 9,
+    name: "AgeBond",
+    description: "An innovative web application designed to explore and calculate intricate family age relationships. Built with React, Vite, and Zustand, it features a dual-mode interface: a guided mode with pre-defined templates for precise calculations, and an AI-powered mode using Google's Gemini API for natural language queries. Users can manage family members, track life events, and ask complex questions like 'When will my sister and I have a combined age equal to our mom's?' The relationship-aware AI provides personalized, context-rich answers, making generational connections easy to visualize.",
+    smallDescription: "An AI-powered app to explore family age relationships.",
+    technologies: ["React", "Vite", "Zustand", "Google Gemini API", "CSS Modules"],
+    liveDemoLink: "https://www.agebond.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/agebond",
+    screenshot: project_agebond
+  },
+
   // {
-  //   id: 9,
+  //   id: 10,
   //   name: "Project Delta",
   //   description: "Description for Project Delta, focusing on UI/UX.",
   //   smallDescription: "A UI/UX focused project with modern design.",
