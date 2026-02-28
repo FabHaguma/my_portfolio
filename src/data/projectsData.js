@@ -6,6 +6,7 @@ import project_agebond from '../assets/images/projects/agebond-screenshot.png';
 import project_ytsubs from '../assets/images/projects/yt-subs-screenshot.png';
 import project_arteditor from '../assets/images/projects/haguma-art-editor-screenshot.png';
 import project_text2json from '../assets/images/projects/text2json-screenshot.png';
+import project_jobScraper from '../assets/images/projects/job-scraper_screenshot.png';
 
 // Featured projects displayed on the landing page (in order of appearance)
 // To add a new featured project: Add its ID to this array
@@ -22,7 +23,7 @@ export const projectsData = [
     id: 1,
     name: "YT Subs",
     description: "Unlock insights from YouTube videos instantly without watching the whole stream. This full-stack application extracts video subtitles using yt-dlp and leverages AI models to generate concise summaries and answer user questions about the content. It features a responsive React frontend for seamless interaction and a robust Express backend handling media parsing and AI integration.",
-    smallDescription: "Download YouTube transcripts, summarize content, and chat with AI.",
+    smallDescription: "Get YouTube transcript, summary and a quick chat with AI about the content.",
     technologies: ["Python", "fastapi", "React", "Node.js", "Express", "Google Gemini AI", "yt-dlp", "Docker"],
     liveDemoLink: "https://www.ytsubs.haguma.com/",
     sourceCodeLink: "https://github.com/fabhaguma/yt-subs",
@@ -60,27 +61,6 @@ export const projectsData = [
   },
   {
     id: 5,
-    name: "AgeBond",
-    description: "An innovative web application designed to explore and calculate intricate family age relationships. Built with React, Vite, and Zustand, it features a dual-mode interface: a guided mode with pre-defined templates for precise calculations, and an AI-powered mode using Google's Gemini API for natural language queries. Users can manage family members, track life events, and ask complex questions like 'When will my sister and I have a combined age equal to our mom's?' The relationship-aware AI provides personalized, context-rich answers, making generational connections easy to visualize.",
-    smallDescription: "An AI-powered app to explore family age relationships.",
-    technologies: ["React", "Vite", "Zustand", "Google Gemini API", "CSS Modules"],
-    liveDemoLink: "https://www.agebond.haguma.com/",
-    sourceCodeLink: "https://github.com/FabHaguma/agebond",
-    screenshot: project_agebond
-  },
-  
-  {
-    id: 6,
-    name: "Noch Mal: Online Adaptation",
-    description: "An adaptation of a multiplayer board game that allows players to enjoy the classic Noch Mal game online. It features real-time gameplay, of rolling dice to strategically place numbers on a grid, aiming to complete rows and columns for points. Players can join games, track their scores. The game is designed to be user-friendly and engaging, with a focus on smooth gameplay and an intuitive interface.",
-    smallDescription: "An online adaptation of the classic Noch Mal board game.",
-    technologies: ["React", "Node.js", "Express", "Socket.IO", "Vanilla CSS"],
-    liveDemoLink: "https://www.nochmal.haguma.com/",
-    sourceCodeLink: "https://github.com/FabHaguma/nochmal-online",
-    screenshot: project_nochmal
-  },
-  {
-    id: 7,
     name: "Text-to-JSON",
     description: "A powerful, AI-driven tool that extracts structured JSON data from raw, unstructured text using AI. It features a robust FastAPI backend and a modern, responsive frontend interface. Users can input any text, and the application will parse it to generate a clean JSON output, making it ideal for data extraction, content organization, and automation tasks. The intuitive design ensures a seamless user experience, while the advanced AI capabilities provide accurate and efficient data parsing.",
     smallDescription: "An AI-powered tool to convert unstructured text into structured JSON data.", 
@@ -89,15 +69,46 @@ export const projectsData = [
     sourceCodeLink: "https://github.com/FabHaguma/text_to_json",
     screenshot: project_text2json
   },
+
+  {
+    id: 6,
+    name: "Job Scraper",
+    description: "A full-stack web application that scrapes job listings from multiple websites across Rwanda and Africa, filters them by user-defined keywords, and presents the results through a clean React UI. The backend, built with Node.js and Express, uses Cheerio and Axios to fetch and parse job data from various sources. The frontend allows users to easily browse and search for relevant job opportunities in different industries, providing a centralized platform for job seekers in the region.",
+    smallDescription: "Scrape job listings from different sources according to user-defined keywords.",
+    technologies: ["Python", "Flask", "beautifulsoup4", "flask-cors", "React", "Axios"],
+    liveDemoLink: "https://js.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/scraper",
+    screenshot: project_jobScraper
+  },
+  {
+    id: 7,
+    name: "AgeBond",
+    description: "An innovative web application designed to explore and calculate intricate family age relationships. Built with React, Vite, and Zustand, it features a dual-mode interface: a guided mode with pre-defined templates for precise calculations, and an AI-powered mode using Google's Gemini API for natural language queries. Users can manage family members, track life events, and ask complex questions like 'When will my sister and I have a combined age equal to our mom's?' The relationship-aware AI provides personalized, context-rich answers, making generational connections easy to visualize.",
+    smallDescription: "An AI-powered app to explore family age relationships.",
+    technologies: ["React", "Vite", "Zustand", "Google Gemini API", "CSS Modules"],
+    liveDemoLink: "https://www.agebond.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/agebond",
+    screenshot: project_agebond
+  },
+  {
+    id: 8,
+    name: "Noch Mal: Online Adaptation",
+    description: "An adaptation of a multiplayer board game that allows players to enjoy the classic Noch Mal game online. It features real-time gameplay, of rolling dice to strategically place numbers on a grid, aiming to complete rows and columns for points. Players can join games, track their scores. The game is designed to be user-friendly and engaging, with a focus on smooth gameplay and an intuitive interface.",
+    smallDescription: "An online adaptation of the classic Noch Mal board game.",
+    technologies: ["React", "Node.js", "Express", "Socket.IO", "Vanilla CSS"],
+    liveDemoLink: "https://www.nochmal.haguma.com/",
+    sourceCodeLink: "https://github.com/FabHaguma/nochmal-online",
+    screenshot: project_nochmal
+  },
   
   // {
-  //   id: 5,
+  //   id: 9,
   //   name: "Project Delta",
   //   description: "Description for Project Delta, focusing on UI/UX.",
   //   smallDescription: "A UI/UX focused project with modern design.",
   //   technologies: ["React", "Figma", "Storybook"],
   //   liveDemoLink: "https://your-live-demo-link5.com",
   //   sourceCodeLink: null, // Example: if no public source code
-  //   screenshot: placeholderScreenshot,
+  //   screenshot: placeholderScreenshot
   // },
 ];
