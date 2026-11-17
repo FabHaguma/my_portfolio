@@ -1,38 +1,21 @@
-// src/components/Footer.jsx
-import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Footer.css';
-import githubIcon from '../../assets/icons/github.png';
-import linkedinIcon from '../../assets/icons/linkedin.png';
-import emailIcon from '../../assets/icons/mail.png';
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/fabhaguma', icon: githubIcon },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fabrice-haguma/', icon: linkedinIcon },
-    { name: 'Email', url: 'mailto:fabrice@haguma.com', icon: emailIcon },
-  ];
+export default function Footer() {
+  const { pathname } = useLocation();
+  const topLink = pathname === '/projects' ? '/projects#projects-page' : '/#top';
 
   return (
     <footer className="app-footer">
-      <div className="footer-content">
-        <div className="social-links">
-          {socialLinks.map(link => (
-            <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name} className="social-link">
-              <span style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={link.icon} alt={link.name} style={{ width: '20px', height: '20px', marginRight: '0.5em' }} />
-                <span>{link.name}</span>
-              </span>
-            </a>
-          ))}
-        </div>
-        <p className="copyright">
-          © {currentYear} Fabrice HAGUMA. All rights reserved.
-        </p>
+      <div className="shell footer-content">
+        <p>© {new Date().getFullYear()} Fabrice Haguma</p>
+        <nav aria-label="Social links">
+          <a href="https://github.com/fabhaguma" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/fabrice-haguma/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          {pathname === '/projects' && <a href="mailto:fabrice@haguma.com">Email <span aria-hidden="true">↗</span></a>}
+        </nav>
+        <Link to={topLink}>Back to top <span aria-hidden="true">↑</span></Link>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

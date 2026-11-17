@@ -7,9 +7,8 @@ This is my personal portfolio website, built from scratch with React and Vite. I
 ## Features
 
 - **Responsive Design**: Adapts seamlessly to various screen sizes, from mobile to desktop.
-- **Light/Dark Theme**: A theme toggle for user preference.
-- **Dynamic Project Showcase**: Projects are loaded from a centralized data source.
-- **Smooth Navigation**: Utilizes React Router for smooth scrolling and seamless navigation between sections and pages.
+- **Project Gallery**: Explore featured work on the homepage or search the full project catalog by title, description, or technology.
+- **Section Links**: React Router connects the project catalog to the About, Toolkit, Résumé, and Contact sections.
 - **Component-Based Architecture**: Built with reusable React components for maintainability.
 
 ## Technologies Used

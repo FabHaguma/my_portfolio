@@ -1,100 +1,95 @@
-/* src/components/Header.css */
 .app-header {
-  background-color: var(--header-bg-light);
-  color: var(--header-text-light);
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky; /* Makes the header stick to the top */
+  position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 3;
+  background: var(--ink);
+  color: var(--white);
+  border-bottom: 1px solid var(--line-on-dark);
 }
 
 .header-content {
-  max-width: 1200px; /* Or your preferred max width */
-  margin: 0 auto;
+  min-height: calc(var(--header-height) - 1px);
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
+  gap: 1.25rem;
 }
 
-/* .header-content { ... display: flex; justify-content: space-between; align-items: center; } */
-.nav-and-toggle {
+.wordmark, .header-contact, .header-content nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Space between nav and toggle button */
 }
 
-.app-header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+.wordmark {
+  gap: 0.7rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.monogram {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  flex: 0 0 2.2rem;
+  border-radius: 0.25rem;
+  background: var(--acid);
+  color: var(--ink);
+  font: 600 0.875rem var(--font-mono);
+  letter-spacing: -0.06em;
+}
+
+.header-content a {
   text-decoration: none;
-  color: var(--link-color-light);
 }
 
-.app-header nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.header-content nav {
+  gap: clamp(1.15rem, 3vw, 2.75rem);
+  color: var(--muted-on-dark);
+  font-weight: 600;
+}
+
+.header-content nav a {
   display: flex;
-  gap: 1.5rem; /* Space between nav items */
+  align-items: center;
+  min-height: 2.75rem;
 }
 
-.app-header nav ul li a {
-  text-decoration: none;
-  color: var(--link-color-light);
-  font-weight: 500;
-  transition: color 0.2s ease-in-out;
+.header-content nav a:hover,
+.header-content nav a[aria-current='page'] {
+  color: var(--acid);
 }
 
-.app-header nav ul li a:hover,
-.app-header nav ul li a.active { /* For NavLink active state */
-  color: var(--link-hover-light);
+.header-contact {
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line-on-dark);
+  border-radius: 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
 }
 
-
-/* src/components/Header.css */
-/* ... existing styles ... */
-
-.menu-toggle { /* Hamburger button, initially hidden */
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem; /* Adjust for icon size */
-  cursor: pointer;
-  color: var(--header-text-light);
+.header-contact:hover {
+  border-color: var(--acid);
+  color: var(--acid);
 }
 
-@media (max-width: 768px) { /* Tablet and mobile */
-  .app-header nav ul {
-    display: none; /* Hide the nav list by default */
-    flex-direction: column;
-    position: absolute;
-    top: 100%; /* Position below the header */
-    left: 0;
-    width: 100%;
-    background-color: var(--header-bg-light);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 1rem 0;
+@media (max-width: 40rem) {
+  .wordmark-name, .header-content nav .nav-toolkit {
+    display: none;
   }
 
-  .app-header nav ul.active { /* Class to show the menu */
-    display: flex;
-  }
-
-  .app-header nav ul li {
-    text-align: center;
-    padding: 0.5rem 0;
-  }
-
-  .menu-toggle {
-    display: block; /* Show hamburger button */
-  }
-
-  /* Adjust .nav-and-toggle or .header-content if needed */
-  .nav-and-toggle {
-    /* If toggle is outside nav, ensure it's visible */
-  }
   .header-content {
-    /* Potentially adjust justify-content if nav is hidden */
+    gap: 0.6rem;
+  }
+
+  .header-content nav {
+    gap: clamp(0.6rem, 3.5vw, 1.25rem);
+    font-size: 0.9375rem;
+  }
+
+  .header-contact {
+    padding-inline: 0.55rem;
   }
 }

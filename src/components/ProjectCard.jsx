@@ -1,62 +1,39 @@
-// src/components/ProjectCard.jsx
-import React from 'react';
 import './ProjectCard.css';
 
-const ProjectCard = ({ project, useSmallDescription = false }) => {
-  if (!project) {
-    return null; // Or some fallback UI if a project is unexpectedly undefined
-  }
+export default function ProjectCard({ project, featured = false }) {
+  const { name, screenshot, smallDescription, description, technologies, liveDemoLink, sourceCodeLink } = project;
+  const tags = featured ? technologies.slice(0, 3) : technologies;
 
   return (
-    <div className="project-card">
-      <div className="project-image-container">
-        <img
-          src={project.screenshot}
-          alt={`Screenshot of ${project.name}`}
-          className="project-screenshot"
-          loading="lazy" // Lazy load images for better performance
-        />
+    <article className="project-card">
+      <div className="project-media">
+        <img src={screenshot} alt={`Screenshot of ${name}`} loading="lazy" decoding="async" />
       </div>
       <div className="project-info">
-        <h3 className="project-name">{project.name}</h3>
-        <p className="project-description">{useSmallDescription ? project.smallDescription : project.description}</p>
-        {!useSmallDescription && (
-          <div className="project-technologies">
-            <strong>Built with:</strong>
-            <ul className="tech-tags">
-              {project.technologies.map((tech, index) => (
-                <li key={index} className="tech-tag">{tech}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <h3>{name}</h3>
+        <p>{smallDescription || description}</p>
+        <ul className="tech-tags" aria-label="Technologies">
+          {tags.map(technology => <li key={technology}>{technology}</li>)}
+        </ul>
         <div className="project-links">
-          {project.liveDemoLink && (
-            <a
-              href={project.liveDemoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link demo-link"
-              aria-label={`Live demo of ${project.name}`}
-            >
-              Live Demo
+          {liveDemoLink && (
+            <a href={liveDemoLink} target="_blank" rel="noreferrer" aria-label={`Live demo of ${name}`}>
+              Live demo <span aria-hidden="true">↗</span>
             </a>
           )}
-          {!useSmallDescription && project.sourceCodeLink && (
-            <a
-              href={project.sourceCodeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link source-link"
-              aria-label={`Source code of ${project.name}`}
-            >
-              Source Code
+          {sourceCodeLink && (
+            <a href={sourceCodeLink} target="_blank" rel="noreferrer" aria-label={`Source code of ${name}`}>
+              Source code <span aria-hidden="true">↗</span>
             </a>
           )}
         </div>
+        {!featured && smallDescription && description && (
+          <details className="project-details">
+            <summary>Project details</summary>
+            <p>{description}</p>
+          </details>
+        )}
       </div>
-    </div>
+    </article>
   );
-};
-
-export default ProjectCard;
+}

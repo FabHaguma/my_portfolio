@@ -1,60 +1,54 @@
-// src/App.jsx
-import React, { useLayoutEffect } from 'react'; // Import useLayoutEffect
-import { Routes, Route, useLocation } from 'react-router-dom'; // Import useLocation
-import './App.css';
+import { useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import About from './components/navigation/About';
+import Hero from './components/navigation/Hero';
 import ProjectsSummary from './components/ProjectsSummary';
 import Technologies from './components/navigation/Technologies';
 import Resume from './components/navigation/Resume';
-// import BlogSummary from './components/BlogSummary';
 import Contact from './components/navigation/Contact';
-import Footer from './components/layout/Footer';
 import ProjectsPage from './pages/ProjectsPage';
 
-// Component for the main content of the single-page scroll
-const HomePageLayout = () => {
-  const location = useLocation(); // Get location object
-
-  // useLayoutEffect is preferred for DOM manipulations that need to happen before paint
-  useLayoutEffect(() => {
-    if (location.state && location.state.scrollToSection) {
-      const sectionId = location.state.scrollToSection;
-      if (sectionId === 'top') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        const sectionElement = document.getElementById(sectionId);
-        if (sectionElement) {
-          sectionElement.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    } else if (!location.hash) { // If no hash and no state, scroll to top on initial load of home
-      window.scrollTo(0, 0);
-    }
-  }, [location.state, location.hash]); // Re-run effect if location.state changes
-
+function HomePage() {
   return (
     <>
-      {/* Add an invisible element at the top for the 'top' scroll target if needed */}
-      <div id="top" style={{ position: 'absolute', top: 0 }}></div>
-      <About />
+      <Hero />
       <ProjectsSummary />
+      <About />
       <Technologies />
       <Resume />
-      {/* <BlogSummary /> */}
       <Contact />
     </>
   );
-};
+}
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    document.title = location.pathname === '/projects'
+      ? 'Projects | Fabrice Haguma'
+      : 'Fabrice Haguma | Solution Engineer';
+
+    const target = location.hash && document.getElementById(location.hash.slice(1));
+
+    if (target) {
+      target.focus({ preventScroll: true });
+      target.scrollIntoView();
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }, [location]);
+
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Routes>
-          <Route path="/" element={<HomePageLayout />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </main>

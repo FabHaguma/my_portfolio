@@ -1,52 +1,27 @@
-/* src/components/Footer.css */
 .app-footer {
-  background-color: var(--footer-bg-light);
-  color: var(--footer-text-light);
-  padding: 2rem 2rem;
-  text-align: center;
+  padding-block: 1.4rem;
+  color: var(--muted-on-dark);
+  background: var(--ink);
+}
+
+.footer-content, .footer-content nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
 }
 
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between;
+  font-size: 0.9375rem;
 }
 
-.social-links {
-  margin-bottom: 1rem;
-}
-
-.social-links a {
-  color: var(--footer-text-light);
-  margin: 0 0.75rem;
+.footer-content a {
+  font-weight: 700;
   text-decoration: none;
-  font-size: 1.2rem; /* Adjust as needed for icons later */
-  transition: color 0.2s ease-in-out;
 }
 
-.social-links a:hover {
-  color: #007bff; /* Example accent color */
-}
-
-.copyright {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.social-links {
-  margin-bottom: 1rem;
-  display: flex; /* Added for better alignment if using icons later */
-  justify-content: center; /* Center the links */
-  gap: 1.5rem; /* Space between links */
-}
-
-.social-links a {
-  color: var(--footer-text-light); /* From theme.css */
-  /* margin: 0 0.75rem; Removed, using gap on parent now */
-  text-decoration: none;
-  font-size: 1rem; /* Adjust if needed */
-  transition: color 0.2s ease-in-out, transform 0.2s ease;
-}
-.social-links a:hover {
-  color: var(--primary-color-light); /* Or a specific accent for footer links */
-  transform: translateY(-2px);
+.footer-content a:hover {
+  color: var(--acid);
+  text-decoration: underline;
 }

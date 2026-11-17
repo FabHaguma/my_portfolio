@@ -1,40 +1,62 @@
-// src/pages/ProjectsPage.jsx
-import React, { useEffect } from 'react';
-// import { Link } from 'react-router-dom'; // If you need a link back to home, etc.
+import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import ProjectCard from '../components/ProjectCard';
 import './ProjectsPage.css';
 
-const ProjectsPage = () => {
-  useEffect(() => {
-    // Scroll to top when component mounts
-    window.scrollTo(0, 0);
-  }, []);
+export default function ProjectsPage() {
+  const [query, setQuery] = useState('');
+  const searchInput = useRef(null);
+  const search = query.trim().toLowerCase();
+  const matchingProjects = projectsData.filter(project =>
+    [project.name, project.smallDescription, project.description, ...project.technologies]
+      .some(value => value?.toLowerCase().includes(search))
+  );
+
+  function clearSearch() {
+    setQuery('');
+    searchInput.current.focus();
+  }
 
   return (
-    <section id="projects-page" className="page-section projects-page-section">
-      <div className="projects-page-header">
-        <h2>All My Projects</h2>
-        <p>
-          Here's a collection of projects I've worked on. Explore them to see my
-          skills in action, from initial concept to deployment.
-        </p>
-        {/* Optional: <Link to="/" className="button-style">Back to Home</Link> */}
+    <section id="projects-page" className="projects-page" tabIndex={-1} aria-labelledby="projects-title">
+      <div className="catalog-intro">
+        <div className="shell">
+          <Link to="/" className="catalog-back"><span aria-hidden="true">←</span> Home</Link>
+          <h1 className="section-title" id="projects-title">Projects<span>.</span></h1>
+          <p className="section-description">Explore my apps, games, and tools. Each project includes a live demo or source code where available.</p>
+        </div>
       </div>
 
-      {projectsData.length > 0 ? (
-        <div className="projects-grid">
-          {projectsData.map(project => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+      <div className="shell catalog">
+        <div className="catalog-controls">
+          <div className="catalog-search">
+            <label htmlFor="project-search">Find a project</label>
+            <input
+              type="search"
+              id="project-search"
+              ref={searchInput}
+              placeholder="Try Python or React"
+              value={query}
+              onChange={event => setQuery(event.target.value)}
+            />
+          </div>
+          <p className="catalog-count" role="status">
+            {matchingProjects.length} {matchingProjects.length === 1 ? 'project' : 'projects'}
+          </p>
         </div>
-      ) : (
-        <div className="no-projects-message">
-          <p>No projects to display at the moment. I'm currently working on new and exciting things, so please check back soon!</p>
-        </div>
-      )}
+
+        {matchingProjects.length > 0 ? (
+          <div className="projects-grid">
+            {matchingProjects.map(project => <ProjectCard key={project.id} project={project} />)}
+          </div>
+        ) : (
+          <div className="catalog-empty">
+            <p>No projects match “{query.trim()}”.</p>
+            <button className="button button-outline" type="button" onClick={clearSearch}>Clear search</button>
+          </div>
+        )}
+      </div>
     </section>
   );
-};
-
-export default ProjectsPage;
+}

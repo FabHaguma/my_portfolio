@@ -1,171 +1,98 @@
-/* src/components/Contact.css */
 .contact-section {
-  /* Compact by default – reduced vertical padding */
-  padding: 2rem 2rem !important;
-  text-align: center;
-  transition: padding 0.3s ease;
+  padding-block: var(--section-space);
+  border-bottom: 1px solid var(--line-on-dark);
+  background: var(--ink);
+  color: var(--white);
 }
 
-.contact-section--expanded {
-  padding: var(--section-padding) !important;
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 6.5rem);
 }
 
-.contact-section h2 {
-  margin-bottom: 0.75rem;
+.contact-section h2 span, .contact-email {
+  color: var(--acid);
 }
 
-/* --- Collapsed state --- */
-.contact-collapsed {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.contact-section h2 + p {
+  margin-top: 1.1rem;
+  color: var(--muted-on-dark);
+  font-size: 1.125rem;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.contact-email:hover {
+  color: var(--acid-hover);
+}
+
+.contact-form fieldset {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.contact-tagline {
-  color: var(--secondary-color-light);
-  font-size: 1rem;
-  margin: 0;
+.contact-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 700;
 }
 
-.contact-open-btn {
-  display: inline-block;
-  background-color: var(--primary-color-light);
-  color: #ffffff;
-  padding: 0.6rem 1.75rem;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-open-btn:hover {
-  background-color: var(--link-hover-light);
-}
-
-.contact-intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 2.5rem auto;
-  font-size: 1.05rem;
-  color: var(--secondary-color-light);
-}
-.contact-form {
-  max-width: 650px;
-  margin: 0 auto;
-  background-color: var(--card-bg-light);
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid var(--card-border-light);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-}
-
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: var(--text-color-light);
-}
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
+.contact-form input, .contact-form textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--card-border-light); /* Use card border for inputs too */
-  border-radius: 5px;
-  font-size: 1rem;
-  background-color: var(--background-color-light); /* Match body background or slightly off */
-  color: var(--text-color-light);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-color-light);
-  box-shadow: 0 0 0 2px var(--primary-color-light-transparent, rgba(0, 123, 255, 0.25)); /* Define --primary-color-light-transparent in theme.css */
-}
-/* Input error styling */
-.form-group input.input-error,
-.form-group textarea.input-error {
-    border-color: #dc3545; /* A common error red */
-}
-.form-group input.input-error:focus,
-.form-group textarea.input-error:focus {
-    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+  min-height: 2.8rem;
+  border: 1px solid #73796a;
+  border-radius: 0.3rem;
+  padding: 0.55rem 0.7rem;
+  background: var(--ink-soft);
+  color: var(--white);
+  font-weight: 400;
 }
 
-.error-message {
-  color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .button {
+  justify-self: start;
+}
+
+.contact-form .button:disabled {
+  cursor: wait;
+  opacity: 0.75;
 }
 
 .form-status {
-  margin-bottom: 1.5rem;
-  min-height: 1.5em; /* Reserve space for messages to avoid layout shift */
-}
-.status-message {
-  padding: 0.75rem;
-  border-radius: 5px;
-  font-size: 0.95rem;
-}
-.status-message.submitting {
-  background-color: #e0e0e0; /* Neutral submitting color */
-  border: 1px solid #c0c0c0;
-  color: #333;
-}
-.status-message.success {
-  background-color: #d4edda; /* Light green */
-  border: 1px solid #c3e6cb;
-  color: #155724;
-}
-.status-message.error {
-  background-color: #f8d7da; /* Light red */
-  border: 1px solid #f5c6cb;
-  color: #721c24;
-}
-.submit-button {
-  display: inline-block;
-  background-color: var(--primary-color-light);
-  color: #ffffff; /* Or your button text color */
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-.submit-button:hover:not(:disabled) {
-  background-color: var(--link-hover-light);
+  color: var(--muted-on-dark);
 }
 
-.submit-button:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
+.form-status:not(:empty) {
+  margin-top: 0.75rem;
 }
 
-.contact-cancel-btn {
-  display: inline-block;
-  background: none;
-  color: var(--secondary-color-light);
-  border: 1px solid var(--card-border-light);
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  margin-left: 0.75rem;
-  transition: color 0.2s ease, border-color 0.2s ease;
+@media (max-width: 48rem) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
-.contact-cancel-btn:hover {
-  color: var(--text-color-light);
-  border-color: var(--secondary-color-light);
+@media (max-width: 31rem) {
+  .contact-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

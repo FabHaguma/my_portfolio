@@ -1,35 +1,26 @@
-/* src/components/Resume.css */
 .resume-section {
-  text-align: center; /* Center content within this section */
+  padding-block: 0 var(--section-space);
 }
 
-.resume-section h2 {
-  margin-bottom: 1rem;
+.resume-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: clamp(1.35rem, 3.25vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--white);
 }
 
-.resume-section p {
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+.resume-panel h2 {
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
 }
 
-.resume-download-button {
-  display: inline-block;
-  background-color: var(--primary-color-light);
-  color: var(--background-color-light); /* Or a specific light text color for buttons */
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-  border: 2px solid transparent;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-}
-
-.resume-download-button:hover {
-  background-color: var(--link-hover-light); /* Using link hover for consistency */
-  color: var(--background-color-light);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.resume-panel p {
+  margin-top: 0.45rem;
+  color: var(--muted);
 }

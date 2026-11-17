@@ -1,59 +1,53 @@
-/* src/components/Technologies.css */
-.technologies-section h2 {
-  margin-bottom: 2.5rem;
+.toolkit {
+  padding-block: var(--section-space) clamp(2rem, 4.5vw, 4rem);
 }
 
-.tech-categories {
+.technology-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(1.25rem, 4vw, 3.25rem);
+  margin-top: 2rem;
 }
 
-.tech-category {
-  background-color: var(--card-bg-light);
-  padding: 1.25rem 1.25rem 1rem;
-  border-radius: 10px;
-  border: 1px solid var(--card-border-light);
-  border-top: 3px solid var(--primary-color-light);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+.technology-group {
+  border-top: 1px solid var(--line);
+  padding-block: 1rem 1.4rem;
 }
 
-.tech-category:hover {
-  box-shadow: 0 4px 14px rgba(0, 128, 128, 0.12);
-  transform: translateY(-2px);
+.technology-group h3 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.tech-category h3 {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--primary-color-light);
-  margin-bottom: 0.75rem;
+.technology-group p {
+  color: var(--muted);
+  margin-top: 0.35rem;
 }
 
-.tech-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+.more-technologies {
+  border-top: 1px solid var(--line);
+  padding-top: 0.85rem;
 }
 
-.tech-item {
-  background-color: var(--primary-color-transparent);
-  color: var(--text-color-light);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  border: none;
+.more-technologies summary {
+  width: fit-content;
+  font-weight: 800;
+  cursor: pointer;
 }
 
-/* Styles for a simple flat list (if you chose that option) */
-.tech-list.simple-list {
-  justify-content: center;
-  gap: 0.5rem;
+.more-technologies .technology-grid {
   margin-top: 1rem;
+}
+
+@media (max-width: 48rem) {
+  .technology-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 31rem) {
+  .technology-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

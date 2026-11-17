@@ -1,58 +1,156 @@
-/* src/App.css */
-
-/* Basic Reset (consider a more comprehensive one if needed) */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
-  scroll-behavior: smooth; /* For smoother anchor link scrolling */
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
-  /* font-family, background-color, color are set in theme.css */
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1rem/1.55 var(--font-sans);
+  text-rendering: optimizeLegibility;
 }
 
-img, picture, video, canvas, svg {
+::selection {
+  background: var(--acid);
+  color: var(--ink);
+}
+
+h1, h2, h3, p, figure, ul {
+  margin: 0;
+}
+
+img {
   display: block;
   max-width: 100%;
 }
 
 a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+main:focus, section[tabindex]:focus {
+  outline: none;
+}
+
+.shell {
+  width: min(100% - 2 * var(--gutter), 76rem);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font: 500 0.875rem/1.4 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.section-title {
+  font-size: clamp(2.55rem, 5.6vw, 5.25rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.section-description {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1.0625rem;
+  max-width: 40rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 3rem;
+  padding: 0.6rem 1.05rem;
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  font-weight: 800;
   text-decoration: none;
-  color: var(--link-color-light);
-}
-a:hover {
-  color: var(--link-hover-light);
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
-
-main {
-  /* This ensures that content in main does not go under a fixed/sticky header */
-  /* The actual padding-top value might need to be adjusted based on your header's height */
-  /* You can use JavaScript to dynamically set this if header height is variable */
-  /* For now, a fixed value or a CSS variable based on header height is common */
-  /* padding-top: 60px; /* Example: if header is roughly 60px tall */
+.button-accent {
+  color: var(--ink);
+  background: var(--acid);
 }
 
-.page-section {
-  padding: var(--section-padding); /* Use variable from theme.css */
-  max-width: 1200px; /* Or your preferred content width */
-  margin: 0 auto; /* Center sections */
+.button-accent:hover {
+  background: var(--acid-hover);
 }
 
-.page-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary-color-light);
-  text-align: center;
+.button-accent:focus-visible,
+.skip-link:focus-visible {
+  outline-color: var(--acid);
 }
 
-/* Add more global styles as needed */
+.button-outline {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: transparent;
+}
+
+.button-outline:hover {
+  color: var(--white);
+  background: var(--ink);
+}
+
+.text-link {
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+}
+
+.text-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 5;
+  top: 0.5rem;
+  left: var(--gutter);
+  background: var(--acid);
+  color: var(--ink);
+  padding: 0.75rem;
+  transform: translateY(-180%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 40rem) {
+  :root {
+    --header-height: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}

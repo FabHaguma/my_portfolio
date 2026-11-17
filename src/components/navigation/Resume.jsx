@@ -1,28 +1,17 @@
-// src/components/Resume.jsx
-import React from 'react';
 import './Resume.css';
 
-const Resume = () => {
-  const resumePdfPath = '/FabriceHaguma_Resume.pdf'; // Path relative to the deployed site's root
-
+export default function Resume() {
   return (
-    <section id="resume" className="page-section resume-section">
-      <h2>My Resume</h2>
-      <p>
-        Interested in learning more about my professional background?
-        Download my resume for a detailed overview of my skills and experience.
-      </p>
-      <a
-        href={resumePdfPath}
-        download="FabriceHaguma_Resume.pdf" // Suggests filename for download
-        target="_blank" // Opens in new tab, also good for viewing before download
-        rel="noopener noreferrer"
-        className="resume-download-button"
-      >
-        Download Resume (PDF)
-      </a>
+    <section id="resume" className="resume-section shell" tabIndex={-1} aria-labelledby="resume-title">
+      <div className="resume-panel">
+        <div>
+          <h2 id="resume-title">Résumé</h2>
+          <p>My experience, education, and technical skills.</p>
+        </div>
+        <a className="button button-outline" href="/FabriceHaguma_Resume.pdf" download>
+          Download PDF <span aria-hidden="true">↓</span>
+        </a>
+      </div>
     </section>
   );
-};
-
-export default Resume;
+}

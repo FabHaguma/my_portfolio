@@ -1,68 +1,28 @@
-// src/components/About.jsx
-import React, { useState } from 'react';
-import profilePhoto from '../../assets/images/profile-fabrice.jpg';
-import AboutModal from '../modals/AboutModal';
-import { aboutHobbies, journeyBeforeGame, journeyAfterGame, aboutPhilosophy, aboutWorkStyle } from '../../data/aboutData';
+import { aboutTopics } from '../../data/aboutData';
 import './About.css';
 
-const aboutParagraphs = [
-  {
-    label: 'My Journey',
-    content: (
-      <>
-        {journeyBeforeGame} The challenge sparked an idea: why not create{' '}
-        <a
-          href="https://letter-to-word.haguma.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          a simple application
-        </a>{' '}
-        that lists all possible combinations of real words from any given
-          set of letters? {journeyAfterGame}
-      </>
-    ),
-  },
-  aboutWorkStyle,
-  aboutPhilosophy,
-  aboutHobbies
-];
-
-const About = () => {
-  const [modalContent, setModalContent] = useState(null);
-
+export default function About() {
   return (
-    <section id="about" className="page-section about-section">
-      <div className="about-content">
-        <div className="about-image-container">
-          <img src={profilePhoto} alt="Fabrice Haguma" className="profile-photo" />
-        </div>
-        <div className="about-text-container">
-          <h2>About Me</h2>
-          <p className="tagline">
-            I am a Solution Engineer, specializing in architecting technical solutions that turn complexity into a competitive advantage. 
-            Leveraging my expertise in full-stack development and system optimization, I seamlessly bridge business strategy with robust engineering. 
-            Currently based in Kigali, Rwanda.
+    <section id="about" className="about-section" tabIndex={-1} aria-labelledby="about-title">
+      <div className="shell about-layout">
+        <div>
+          <p className="eyebrow">About me</p>
+          <h2 id="about-title">It started with<br />a word game.</h2>
+          <p className="about-intro">
+            A game on my phone made me wonder how to find every word in a set of letters.
+            I built a <a href="https://letter-to-word.haguma.com/" target="_blank" rel="noreferrer">tool to find out</a>.
+            That process of turning a question into working software is what drew me to engineering.
           </p>
-          <div className="more-aboutme">
-            {aboutParagraphs.map((para, idx) => (
-              <button
-                key={idx}
-                className="about-modal-btn"
-                onClick={() => setModalContent(para.content)}
-              >
-                {para.label}
-              </button>
-            ))}
-            <AboutModal isOpen={!!modalContent} onClose={() => setModalContent(null)}>
-              {modalContent}
-            </AboutModal>
-          </div>
-          
+        </div>
+        <div className="about-topics">
+          {aboutTopics.map(({ label, content }) => (
+            <details key={label}>
+              <summary>{label}</summary>
+              <p>{content}</p>
+            </details>
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}
