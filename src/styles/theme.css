@@ -2,17 +2,18 @@
 
 :root {
   color-scheme: light;
-  --ink: #171916;
-  --ink-soft: #22251e;
-  --paper: #f7f6ef;
-  --white: #fffef8;
-  --muted: #505349;
-  --muted-on-dark: #c1c6b8;
-  --line: #d7d8cc;
-  --line-on-dark: #414639;
-  --acid: #e0fa56;
-  --acid-hover: #eeff9f;
-  --green: #394519;
+  --ink: #191817;
+  --ink-soft: #282521;
+  --paper: #f7f4ec;
+  --white: #fffdf7;
+  --muted: #514c46;
+  --muted-on-dark: #c9c2b6;
+  --line: #d8d0c3;
+  --line-on-dark: #49413a;
+  --accent: #efb082;
+  --accent-hover: #f8c49c;
+  --accent-wash: #f2d5be;
+  --accent-ink: #764526;
   --font-sans: 'DM Sans', 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', Consolas, monospace;
   --gutter: clamp(1.25rem, 4.75vw, 4.5rem);

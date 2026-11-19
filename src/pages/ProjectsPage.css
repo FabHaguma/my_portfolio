@@ -4,7 +4,10 @@
 
 .catalog-intro {
   padding-block: clamp(2.5rem, 6vw, 5.25rem);
-  background: var(--ink);
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(90deg, var(--ink) 25%, transparent),
+    repeating-linear-gradient(125deg, transparent 0 19px, #e8bb8c38 19px 20px);
   color: var(--white);
 }
 
@@ -23,7 +26,7 @@
 }
 
 .catalog-intro .section-title span {
-  color: var(--acid);
+  color: var(--accent);
 }
 
 .catalog-intro .section-description {
@@ -35,9 +38,8 @@
 }
 
 .catalog-controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(max-content, 0.65fr);
   align-items: flex-end;
   gap: 1rem;
   margin-bottom: 1.5rem;
@@ -46,22 +48,23 @@
 .catalog-search {
   display: grid;
   gap: 0.35rem;
-  width: min(100%, 25rem);
   font-weight: 800;
 }
 
-.catalog-search input {
+.catalog-search input, .catalog-search select {
   width: 100%;
   min-height: 3rem;
   padding: 0.55rem 0.75rem;
-  border: 1px solid #838775;
+  border: 1px solid #8d8174;
   border-radius: 0.3rem;
   background: var(--white);
   color: var(--ink);
-  font-weight: 500;
+  font: 500 1rem/1.45 var(--font-sans);
 }
 
 .catalog-count {
+  justify-self: end;
+  padding-block: 0.8rem;
   color: var(--muted);
   font: 500 0.875rem/1.4 var(--font-mono);
 }
@@ -76,4 +79,20 @@
 
 .catalog-empty .button {
   margin-top: 1rem;
+}
+
+@media (max-width: 40rem) {
+  .catalog-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .catalog-search:not(.catalog-technology) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 25rem) {
+  .catalog-controls {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
 }

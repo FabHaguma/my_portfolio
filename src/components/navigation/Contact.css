@@ -1,35 +1,54 @@
 .contact-section {
-  padding-block: var(--section-space);
-  border-bottom: 1px solid var(--line-on-dark);
-  background: var(--ink);
-  color: var(--white);
+  padding-block: clamp(3rem, 6vw, 5.75rem);
+  background: var(--accent-wash);
+  color: var(--ink);
 }
 
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(2rem, 7vw, 6.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
 }
 
-.contact-section h2 span, .contact-email {
-  color: var(--acid);
+.contact-invitation h2 {
+  font-size: clamp(5rem, 9vw, 8.5rem);
+  font-weight: 900;
+  line-height: 0.83;
+  letter-spacing: -0.085em;
 }
 
-.contact-section h2 + p {
-  margin-top: 1.1rem;
-  color: var(--muted-on-dark);
-  font-size: 1.125rem;
+.contact-invitation h2 span {
+  display: block;
+}
+
+.contact-invitation p {
+  max-width: 24rem;
+  margin-top: 1.6rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  line-height: 1.45;
 }
 
 .contact-email {
-  display: inline-block;
-  margin-top: 0.9rem;
-  font-weight: 800;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  max-width: 100%;
+  margin-top: 1.15rem;
+  font: 600 clamp(0.9375rem, 1.4vw, 1.125rem)/1.5 var(--font-mono);
+  text-decoration-thickness: 1px;
   overflow-wrap: anywhere;
 }
 
 .contact-email:hover {
-  color: var(--acid-hover);
+  text-decoration-thickness: 2px;
+}
+
+.contact-form {
+  padding: clamp(1.35rem, 3.15vw, 2.8rem);
+  background: var(--ink);
+  color: var(--white);
+  border-radius: 0.4rem;
 }
 
 .contact-form fieldset {
@@ -49,16 +68,16 @@
 
 .contact-form label {
   display: grid;
-  gap: 0.3rem;
+  gap: 0.45rem;
   font-weight: 700;
 }
 
 .contact-form input, .contact-form textarea {
   width: 100%;
-  min-height: 2.8rem;
-  border: 1px solid #73796a;
-  border-radius: 0.3rem;
-  padding: 0.55rem 0.7rem;
+  min-height: 3rem;
+  border: 1px solid #87796b;
+  border-radius: 0.22rem;
+  padding: 0.65rem 0.75rem;
   background: var(--ink-soft);
   color: var(--white);
   font-weight: 400;
@@ -68,8 +87,15 @@
   resize: vertical;
 }
 
+.contact-form :is(input, textarea):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .contact-form .button {
-  justify-self: start;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.15rem;
 }
 
 .contact-form .button:disabled {
@@ -85,9 +111,23 @@
   margin-top: 0.75rem;
 }
 
+.contact-section ::selection {
+  color: var(--white);
+  background: var(--ink);
+}
+
 @media (max-width: 48rem) {
   .contact-layout {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-invitation h2 {
+    font-size: clamp(3.7rem, 12vw, 6rem);
+    line-height: 0.95;
+  }
+
+  .contact-invitation h2 span {
+    display: inline;
   }
 }
 

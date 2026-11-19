@@ -15,7 +15,7 @@
 }
 
 .project-card:hover {
-  border-color: #868a78;
+  border-color: #897a6a;
 }
 
 .project-media {
@@ -23,8 +23,8 @@
   place-items: center;
   aspect-ratio: 7 / 4.6;
   padding: 7%;
-  background: #dce3bf;
-  background-image: radial-gradient(#454c2f30 1px, transparent 1px);
+  background: #e9d9cc;
+  background-image: radial-gradient(#5c3a2530 1px, transparent 1px);
   background-size: 9px 9px;
   border-bottom: 1px solid var(--line);
 }
@@ -44,9 +44,9 @@
   max-height: 100%;
   min-height: 0;
   object-fit: contain;
-  border: 1px solid #17191624;
+  border: 1px solid #19181724;
   border-radius: 0.25rem;
-  box-shadow: 0 0.55rem 1.35rem #17191624;
+  box-shadow: 0 0.55rem 1.35rem #19181724;
 }
 
 .project-info {

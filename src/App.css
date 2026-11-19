@@ -16,7 +16,7 @@ body {
 }
 
 ::selection {
-  background: var(--acid);
+  background: var(--accent);
   color: var(--ink);
 }
 
@@ -92,16 +92,16 @@ main:focus, section[tabindex]:focus {
 
 .button-accent {
   color: var(--ink);
-  background: var(--acid);
+  background: var(--accent);
 }
 
 .button-accent:hover {
-  background: var(--acid-hover);
+  background: var(--accent-hover);
 }
 
 .button-accent:focus-visible,
 .skip-link:focus-visible {
-  outline-color: var(--acid);
+  outline-color: var(--accent);
 }
 
 .button-outline {
@@ -129,7 +129,7 @@ main:focus, section[tabindex]:focus {
   z-index: 5;
   top: 0.5rem;
   left: var(--gutter);
-  background: var(--acid);
+  background: var(--accent);
   color: var(--ink);
   padding: 0.75rem;
   transform: translateY(-180%);

@@ -1,0 +1,170 @@
+.hero {
+  overflow: clip;
+  color: var(--white);
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(90deg, var(--ink) 25%, transparent 90%),
+    linear-gradient(to right, #f2c7a215 1px, transparent 1px),
+    linear-gradient(to bottom, #f2c7a215 1px, transparent 1px);
+  background-size: auto, 3.2rem 3.2rem, 3.2rem 3.2rem;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: center;
+  gap: clamp(1.75rem, 4vw, 4rem);
+  padding-block: clamp(3rem, 5vw, 5rem);
+}
+
+.hero-role {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--accent);
+}
+
+.hero-role::before {
+  content: '';
+  width: 1.8rem;
+  height: 0.65rem;
+  background: repeating-linear-gradient(115deg, transparent 0 3px, var(--accent) 3px 5px);
+}
+
+.hero h1 {
+  margin: 1.2rem 0 1.65rem -0.055em;
+  font-size: clamp(5.25rem, 9.8vw, 9.75rem);
+  font-weight: 900;
+  line-height: 0.84;
+  letter-spacing: -0.085em;
+}
+
+.hero h1 > span {
+  display: block;
+  color: var(--accent);
+}
+
+.hero-dot {
+  color: var(--white);
+}
+
+.hero-description {
+  max-width: 29.5rem;
+  color: var(--muted-on-dark);
+  font-size: clamp(1rem, 1.55vw, 1.2rem);
+  line-height: 1.5;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem clamp(1rem, 2.2vw, 2rem);
+  margin-top: 1.65rem;
+}
+
+.hero-actions .button {
+  gap: clamp(0.8rem, 2.5vw, 2.5rem);
+}
+
+.hero-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  color: var(--white);
+  text-decoration-color: #a59b8d;
+  font-weight: 700;
+}
+
+.hero-resume:hover {
+  color: var(--accent);
+}
+
+.portrait {
+  --cut: clamp(2rem, 4vw, 4rem);
+  --offset: clamp(0.7rem, 1.4vw, 1.2rem);
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 31.5rem);
+  justify-self: end;
+  margin: 0;
+  padding: 0 var(--offset) var(--offset) 0;
+}
+
+.portrait::before,
+.portrait-image {
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+}
+
+.portrait::before {
+  content: '';
+  position: absolute;
+  inset: var(--offset) 0 0 var(--offset);
+  z-index: -1;
+  background: var(--accent);
+}
+
+.portrait-image {
+  aspect-ratio: 1.06;
+  background: var(--ink-soft);
+  overflow: hidden;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 34%;
+}
+
+.portrait figcaption {
+  position: absolute;
+  left: calc(-1 * var(--offset));
+  bottom: calc(var(--offset) + 0.95rem);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border-left: 3px solid var(--accent);
+  background: var(--ink);
+  color: var(--white);
+  font: 500 0.875rem/1.25 var(--font-mono);
+}
+
+.portrait figcaption::before {
+  content: '';
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid var(--accent);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 46rem) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.9rem;
+    padding-block: 2.75rem;
+  }
+
+  .hero-content, .portrait {
+    width: min(100%, 32rem);
+    justify-self: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(4.15rem, 16.6vw, 6.8rem);
+  }
+
+  .portrait-image {
+    aspect-ratio: 1.4;
+  }
+
+  .portrait img {
+    object-position: center 26%;
+  }
+
+  .portrait figcaption {
+    left: 0;
+  }
+}

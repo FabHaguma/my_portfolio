@@ -49,8 +49,8 @@ export default function Contact() {
   return (
     <section id="contact" className="contact-section" tabIndex={-1} aria-labelledby="contact-title">
       <div className="shell contact-layout">
-        <div>
-          <h2 className="section-title" id="contact-title">Let’s talk<span>.</span></h2>
+        <div className="contact-invitation">
+          <h2 className="section-title" id="contact-title">Let’s <span>talk.</span></h2>
           <p>Have a project in mind or want to work together?</p>
           <a className="contact-email" href="mailto:fabrice@haguma.com">
             fabrice@haguma.com <span aria-hidden="true">↗</span>
