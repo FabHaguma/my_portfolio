@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './Contact.css';
 
 const formEndpoint = 'https://formspree.io/f/meoanyej';
+const phoneNumber = '+250 786 072 607';
+const dialNumber = phoneNumber.replaceAll(' ', '');
 
 export default function Contact() {
   const [status, setStatus] = useState('idle');
@@ -55,6 +57,14 @@ export default function Contact() {
           <a className="contact-email" href="mailto:fabrice@haguma.com">
             fabrice@haguma.com <span aria-hidden="true">↗</span>
           </a>
+          <div className="contact-phone-actions">
+            <a className="button button-outline" href={`tel:${dialNumber}`}>
+              Call {phoneNumber}
+            </a>
+            <a className="button button-outline" href={`https://wa.me/${dialNumber.slice(1)}`} target="_blank" rel="noreferrer">
+              WhatsApp <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
 
         <form action={formEndpoint} method="post" className="contact-form" onSubmit={sendMessage}>

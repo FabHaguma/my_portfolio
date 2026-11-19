@@ -44,6 +44,13 @@
   text-decoration-thickness: 2px;
 }
 
+.contact-phone-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
 .contact-form {
   padding: clamp(1.35rem, 3.15vw, 2.8rem);
   background: var(--ink);
